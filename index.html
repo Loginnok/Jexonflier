@@ -2,571 +2,741 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="theme-color" content="#050505">
     <title>JEXONFLIER — Digital Design & Websites</title>
-    <meta name="description" content="Современные сайты, digital-проекты и AI-ready решения.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="cursor-glow"></div>
+<div class="page-loader">
+    <div class="loader-logo">JEXONFLIER<span>.</span></div>
+    <div class="loader-line"><span></span></div>
+</div>
+
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+<div class="cursor-label">OPEN</div>
+
 <div class="noise"></div>
+<div class="grid-bg"></div>
 
-<header class="header">
-    <div class="nav">
-        <a href="#" class="logo">JEXONFLIER<span>.</span></a>
+<div class="scroll-progress">
+    <span></span>
+</div>
 
-        <nav class="nav-links">
-            <a href="#works">Работы</a>
-            <a href="#services">Услуги</a>
-            <a href="#contact">Контакты</a>
-        </nav>
+<header class="header" id="header">
+    <a href="#top" class="logo magnetic">
+        JEXONFLIER<span>.</span>
+    </a>
 
-        <a class="nav-contact" href="https://t.me/Jexonflier" target="_blank">
-            Telegram <span>↗</span>
-        </a>
-    </div>
+    <nav class="nav">
+        <a href="#works">Работы</a>
+        <a href="#services">Услуги</a>
+        <a href="#contact">Контакты</a>
+    </nav>
+
+    <a href="https://t.me/Jexonflier" target="_blank" class="header-contact magnetic">
+        <span>Связаться</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 12h13M13 6l6 6-6 6"/>
+        </svg>
+    </a>
+
+    <button class="menu-button" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+    </button>
 </header>
 
-<main>
+<div class="mobile-menu">
+    <div class="mobile-menu-inner">
+        <a href="#works">Работы <span>01</span></a>
+        <a href="#services">Услуги <span>02</span></a>
+        <a href="#contact">Контакты <span>03</span></a>
+        <a href="https://t.me/Jexonflier" target="_blank">Telegram <span>↗</span></a>
+    </div>
+</div>
+
+<main id="top">
 
     <!-- HERO -->
     <section class="hero">
-        <div class="hero-grid"></div>
+        <div class="hero-orbit orbit-one"></div>
+        <div class="hero-orbit orbit-two"></div>
 
-        <div class="container">
-            <div class="hero-content reveal">
+        <div class="container hero-container">
 
-                <div class="eyebrow">
-                    <span class="status"></span>
+            <div class="hero-top reveal">
+                <div class="status">
+                    <span class="status-dot"></span>
                     AVAILABLE FOR PROJECTS
                 </div>
 
-                <h1>
-                    Сайты,<br>
-                    которые <span>не выглядят</span><br>
-                    обычными.
-                </h1>
+                <div class="hero-index">
+                    01 <span>/</span> 06
+                </div>
+            </div>
 
-                <p class="hero-description">
-                    Создаю современные сайты для бизнеса —
-                    от чистых лендингов до интерактивных
-                    digital-проектов.
-                </p>
+            <div class="hero-main">
+                <div class="hero-copy">
+                    <div class="eyebrow reveal">
+                        DIGITAL DESIGN & DEVELOPMENT
+                    </div>
 
-                <div class="hero-actions">
-                    <a href="#works" class="btn btn-primary">
-                        Смотреть работы
-                        <span class="btn-arrow">↓</span>
-                    </a>
+                    <h1 class="hero-title">
+                        <span class="line reveal-line">Сайты,</span>
+                        <span class="line reveal-line">которые</span>
+                        <span class="line reveal-line accent-line">
+                            <i>не выглядят</i>
+                        </span>
+                        <span class="line reveal-line">обычными.</span>
+                    </h1>
 
-                    <a href="https://t.me/Jexonflier"
-                       target="_blank"
-                       class="btn btn-secondary">
-                        Написать мне
-                        <span class="btn-arrow">↗</span>
-                    </a>
+                    <div class="hero-bottom reveal">
+                        <p>
+                            Создаю современные сайты с сильным визуалом,
+                            анимациями и вниманием к каждой детали.
+                        </p>
+
+                        <div class="hero-actions">
+                            <a href="#works" class="btn btn-primary magnetic">
+                                <span>Смотреть работы</span>
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M12 5v14M6 13l6 6 6-6"/>
+                                </svg>
+                            </a>
+
+                            <a href="https://t.me/Jexonflier"
+                               target="_blank"
+                               class="btn btn-outline magnetic">
+                                <span>Обсудить проект</span>
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M5 12h13M13 6l6 6-6 6"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
+                <div class="hero-visual reveal">
+                    <div class="hero-card">
+                        <div class="hero-card-glow"></div>
+
+                        <div class="hero-card-top">
+                            <span>JX / 2026</span>
+                            <span>DESIGN</span>
+                        </div>
+
+                        <div class="hero-card-center">
+                            <div class="hero-circle">
+                                <span>J</span>
+                            </div>
+                        </div>
+
+                        <div class="hero-card-bottom">
+                            <span>DIGITAL</span>
+                            <span>EXPERIENCE</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <div class="hero-orb"></div>
+            <div class="scroll-hint reveal">
+                <span>SCROLL TO EXPLORE</span>
+                <div class="scroll-arrow">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 5v14M6 13l6 6 6-6"/>
+                    </svg>
+                </div>
+            </div>
 
-        <div class="scroll-indicator">
-            <span class="scroll-line"></span>
-            SCROLL TO EXPLORE
         </div>
     </section>
 
-
     <!-- MARQUEE -->
-    <div class="marquee">
-        <div class="marquee-track">
-
-            <div class="marquee-item">
+    <section class="marquee-section">
+        <div class="marquee">
+            <div class="marquee-track">
                 <span>WEB DESIGN</span>
-                <i>✦</i>
-            </div>
-
-            <div class="marquee-item">
+                <b>✦</b>
                 <span>DEVELOPMENT</span>
-                <i>✦</i>
-            </div>
-
-            <div class="marquee-item">
+                <b>✦</b>
                 <span>INTERACTIVE</span>
-                <i>✦</i>
-            </div>
-
-            <div class="marquee-item">
+                <b>✦</b>
                 <span>AI READY</span>
-                <i>✦</i>
-            </div>
+                <b>✦</b>
 
-            <div class="marquee-item">
                 <span>WEB DESIGN</span>
-                <i>✦</i>
-            </div>
-
-            <div class="marquee-item">
+                <b>✦</b>
                 <span>DEVELOPMENT</span>
-                <i>✦</i>
-            </div>
-
-            <div class="marquee-item">
+                <b>✦</b>
                 <span>INTERACTIVE</span>
-                <i>✦</i>
-            </div>
-
-            <div class="marquee-item">
+                <b>✦</b>
                 <span>AI READY</span>
-                <i>✦</i>
+                <b>✦</b>
             </div>
-
         </div>
-    </div>
-
+    </section>
 
     <!-- ABOUT -->
     <section class="about section">
         <div class="container">
 
-            <div class="section-label">01 / APPROACH</div>
+            <div class="section-head reveal">
+                <span class="section-number">01</span>
+                <span class="section-label">ABOUT</span>
+            </div>
 
-            <div class="about-content reveal">
-
-                <h2 class="section-title">
-                    Не просто<br>
-                    <span>«сделать сайт».</span>
+            <div class="about-grid">
+                <h2 class="section-title reveal">
+                    Не просто сайт.<br>
+                    <span>Цифровое впечатление.</span>
                 </h2>
 
-                <p class="section-description about-description">
-                    Я собираю digital-проекты, которые выглядят
-                    дороже своей цены, быстро загружаются и
-                    заставляют пользователя взаимодействовать
-                    с ними.
-                </p>
+                <div class="about-text reveal">
+                    <p>
+                        Каждый проект собирается под конкретную задачу:
+                        от идеи и структуры до визуала, разработки и
+                        интерактивных деталей.
+                    </p>
 
-                <div class="about-stats">
+                    <p>
+                        Моя цель — сделать сайт, который хочется
+                        смотреть, запоминать и отправлять другим.
+                    </p>
+                </div>
+            </div>
 
-                    <div>
-                        <strong>07+</strong>
-                        <small>проектов</small>
-                    </div>
-
-                    <div>
-                        <strong>∞</strong>
-                        <small>идей</small>
-                    </div>
-
-                    <div>
-                        <strong>24/7</strong>
-                        <small>digital</small>
-                    </div>
-
+            <div class="stats">
+                <div class="stat reveal">
+                    <strong>07<span>+</span></strong>
+                    <small>PROJECTS</small>
                 </div>
 
+                <div class="stat reveal">
+                    <strong>∞</strong>
+                    <small>ATTENTION TO DETAIL</small>
+                </div>
+
+                <div class="stat reveal">
+                    <strong>24<span>/7</span></strong>
+                    <small>IDEAS & DESIGN</small>
+                </div>
             </div>
 
         </div>
     </section>
 
-
     <!-- WORKS -->
-    <section id="works" class="works section">
+    <section class="works section" id="works">
         <div class="container">
 
             <div class="section-head reveal">
-                <div>
-                    <div class="section-label">02 / SELECTED WORKS</div>
+                <span class="section-number">02</span>
+                <span class="section-label">SELECTED WORKS</span>
+            </div>
 
-                    <h2 class="section-title">
-                        Избранные<br>
-                        <span>проекты.</span>
-                    </h2>
-                </div>
+            <div class="works-intro">
+                <h2 class="section-title reveal">
+                    Избранные<br>
+                    <span>проекты.</span>
+                </h2>
 
-                <p class="section-description">
-                    Несколько концептов и коммерческих
-                    проектов, созданных мной.
+                <p class="works-description reveal">
+                    Несколько концептов и реальных проектов,
+                    которые показывают мой подход к дизайну.
                 </p>
             </div>
 
+            <div class="projects-grid">
 
-            <div class="projects">
+                <!-- AUREL -->
+                <article class="project project-large reveal"
+                         data-cursor="VIEW">
 
-                <!-- 01 -->
-                <a href="https://loginnok.github.io/xd/"
-                   target="_blank"
-                   class="project project-large reveal">
+                    <a href="https://loginnok.github.io/xd/"
+                       target="_blank"
+                       class="project-link">
 
-                    <div class="project-image">
-                        <img src="images/aurel.jpg"
-                             alt="Aurel X"
-                             class="project-photo"
-                             onerror="this.style.display='none'">
+                        <div class="project-image-wrap tilt">
+                            <div class="project-image">
+                                <img src="images/aurel.jpg"
+                                     alt="Aurel"
+                                     loading="lazy">
 
-                        <div class="image-placeholder">
-                            <span>IMAGE 01</span>
-                            <small>images/aurel.jpg</small>
+                                <div class="image-placeholder">
+                                    AUREL
+                                </div>
+
+                                <div class="project-overlay"></div>
+
+                                <div class="project-number">01</div>
+
+                                <div class="project-open">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M5 19L19 5M8 5h11v11"/>
+                                    </svg>
+                                </div>
+
+                                <div class="project-visual-text">
+                                    AUREL
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="project-overlay"></div>
+                        <div class="project-info">
+                            <div>
+                                <span class="project-category">E-COMMERCE / CONCEPT</span>
+                                <h3>Aurel</h3>
+                            </div>
 
-                        <div class="visual-text">AUREL</div>
-                    </div>
-
-                    <div class="project-info">
-                        <div class="project-meta">
-                            <span class="project-category">01 / LANDING PAGE</span>
-                            <h3 class="project-title">AUREL X</h3>
+                            <span class="project-arrow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M5 12h13M13 6l6 6-6 6"/>
+                                </svg>
+                            </span>
                         </div>
 
-                        <span class="project-link">↗</span>
-                    </div>
+                    </a>
+                </article>
 
-                </a>
+                <!-- DAGESTAN -->
+                <article class="project reveal" data-cursor="VIEW">
+                    <a href="https://clck.su/cQWrJ"
+                       target="_blank"
+                       class="project-link">
 
+                        <div class="project-image-wrap tilt">
+                            <div class="project-image">
+                                <img src="images/dagestan.jpg"
+                                     alt="Dagestan"
+                                     loading="lazy">
 
-                <!-- 02 -->
-                <a href="https://clck.su/cQWrJ"
-                   target="_blank"
-                   class="project reveal">
+                                <div class="image-placeholder">DAGESTAN</div>
+                                <div class="project-overlay"></div>
+                                <div class="project-number">02</div>
 
-                    <div class="project-image">
-                        <img src="images/dagestan.jpg"
-                             alt="Dagestan"
-                             class="project-photo"
-                             onerror="this.style.display='none'">
+                                <div class="project-open">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M5 19L19 5M8 5h11v11"/>
+                                    </svg>
+                                </div>
 
-                        <div class="image-placeholder">
-                            <span>IMAGE 02</span>
-                            <small>images/dagestan.jpg</small>
+                                <div class="project-visual-text">
+                                    DAGESTAN
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="project-overlay"></div>
+                        <div class="project-info">
+                            <div>
+                                <span class="project-category">LANDING PAGE</span>
+                                <h3>Dagestan</h3>
+                            </div>
+                            <span class="project-arrow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M5 12h13M13 6l6 6-6 6"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </article>
 
-                        <div class="visual-text">DAGESTAN</div>
-                    </div>
+                <!-- LEATHER -->
+                <article class="project reveal" data-cursor="VIEW">
+                    <a href="https://clck.su/yJCnE"
+                       target="_blank"
+                       class="project-link">
 
-                    <div class="project-info">
-                        <div class="project-meta">
-                            <span class="project-category">02 / INTERACTIVE</span>
-                            <h3 class="project-title">DAGESTAN</h3>
+                        <div class="project-image-wrap tilt">
+                            <div class="project-image">
+                                <img src="images/leather.jpg"
+                                     alt="Leather"
+                                     loading="lazy">
+
+                                <div class="image-placeholder">LEATHER</div>
+                                <div class="project-overlay"></div>
+                                <div class="project-number">03</div>
+
+                                <div class="project-open">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M5 19L19 5M8 5h11v11"/>
+                                    </svg>
+                                </div>
+
+                                <div class="project-visual-text">
+                                    LEATHER
+                                </div>
+                            </div>
                         </div>
 
-                        <span class="project-link">↗</span>
-                    </div>
+                        <div class="project-info">
+                            <div>
+                                <span class="project-category">BRAND / E-COMMERCE</span>
+                                <h3>Leather</h3>
+                            </div>
+                            <span class="project-arrow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M5 12h13M13 6l6 6-6 6"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </article>
 
-                </a>
+                <!-- FITNESS -->
+                <article class="project reveal" data-cursor="VIEW">
+                    <a href="https://clck.su/VczEP"
+                       target="_blank"
+                       class="project-link">
 
+                        <div class="project-image-wrap tilt">
+                            <div class="project-image">
+                                <img src="images/fitness.jpg"
+                                     alt="FitnessPro"
+                                     loading="lazy">
 
-                <!-- 03 -->
-                <a href="https://clck.su/yJCnE"
-                   target="_blank"
-                   class="project reveal">
+                                <div class="image-placeholder">FITNESS</div>
+                                <div class="project-overlay"></div>
+                                <div class="project-number">04</div>
 
-                    <div class="project-image">
-                        <img src="images/leather.jpg"
-                             alt="Leather"
-                             class="project-photo"
-                             onerror="this.style.display='none'">
+                                <div class="project-open">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M5 19L19 5M8 5h11v11"/>
+                                    </svg>
+                                </div>
 
-                        <div class="image-placeholder">
-                            <span>IMAGE 03</span>
-                            <small>images/leather.jpg</small>
+                                <div class="project-visual-text">
+                                    FITNESS
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="project-overlay"></div>
+                        <div class="project-info">
+                            <div>
+                                <span class="project-category">FITNESS / WEB</span>
+                                <h3>FitnessPro</h3>
+                            </div>
+                            <span class="project-arrow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M5 12h13M13 6l6 6-6 6"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </article>
 
-                        <div class="visual-text">LEATHER</div>
-                    </div>
+                <!-- MINDFLOW -->
+                <article class="project reveal" data-cursor="VIEW">
+                    <a href="https://clck.su/lqjLB"
+                       target="_blank"
+                       class="project-link">
 
-                    <div class="project-info">
-                        <div class="project-meta">
-                            <span class="project-category">03 / E-COMMERCE</span>
-                            <h3 class="project-title">LEATHER</h3>
+                        <div class="project-image-wrap tilt">
+                            <div class="project-image">
+                                <img src="images/mindflow.jpg"
+                                     alt="MindFlow"
+                                     loading="lazy">
+
+                                <div class="image-placeholder">MINDFLOW</div>
+                                <div class="project-overlay"></div>
+                                <div class="project-number">05</div>
+
+                                <div class="project-open">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M5 19L19 5M8 5h11v11"/>
+                                    </svg>
+                                </div>
+
+                                <div class="project-visual-text">
+                                    MINDFLOW
+                                </div>
+                            </div>
                         </div>
 
-                        <span class="project-link">↗</span>
-                    </div>
+                        <div class="project-info">
+                            <div>
+                                <span class="project-category">PSYCHOLOGY / CONCEPT</span>
+                                <h3>MindFlow</h3>
+                            </div>
+                            <span class="project-arrow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M5 12h13M13 6l6 6-6 6"/>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </article>
 
-                </a>
+                <!-- KARELIA -->
+                <article class="project reveal" data-cursor="VIEW">
+                    <a href="https://clck.su/KOHjF"
+                       target="_blank"
+                       class="project-link">
 
+                        <div class="project-image-wrap tilt">
+                            <div class="project-image">
+                                <img src="images/karelia.jpg"
+                                     alt="Karelia"
+                                     loading="lazy">
 
-                <!-- 04 -->
-                <a href="https://clck.su/VczEP"
-                   target="_blank"
-                   class="project reveal">
+                                <div class="image-placeholder">KARELIA</div>
+                                <div class="project-overlay"></div>
+                                <div class="project-number">06</div>
 
-                    <div class="project-image">
-                        <img src="images/fitness.jpg"
-                             alt="FitnessPro"
-                             class="project-photo"
-                             onerror="this.style.display='none'">
+                                <div class="project-open">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M5 19L19 5M8 5h11v11"/>
+                                    </svg>
+                                </div>
 
-                        <div class="image-placeholder">
-                            <span>IMAGE 04</span>
-                            <small>images/fitness.jpg</small>
+                                <div class="project-visual-text">
+                                    KARELIA
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="project-overlay"></div>
-
-                        <div class="visual-text">FITNESS</div>
-                    </div>
-
-                    <div class="project-info">
-                        <div class="project-meta">
-                            <span class="project-category">04 / FITNESS</span>
-                            <h3 class="project-title">FITNESSPRO</h3>
+                        <div class="project-info">
+                            <div>
+                                <span class="project-category">TRAVEL / LANDING</span>
+                                <h3>Karelia</h3>
+                            </div>
+                            <span class="project-arrow">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M5 12h13M13 6l6 6-6 6"/>
+                                </svg>
+                            </span>
                         </div>
-
-                        <span class="project-link">↗</span>
-                    </div>
-
-                </a>
-
-
-                <!-- 05 -->
-                <a href="https://clck.su/lqjLB"
-                   target="_blank"
-                   class="project reveal">
-
-                    <div class="project-image">
-                        <img src="images/mindflow.jpg"
-                             alt="MindFlow"
-                             class="project-photo"
-                             onerror="this.style.display='none'">
-
-                        <div class="image-placeholder">
-                            <span>IMAGE 05</span>
-                            <small>images/mindflow.jpg</small>
-                        </div>
-
-                        <div class="project-overlay"></div>
-
-                        <div class="visual-text">MINDFLOW</div>
-                    </div>
-
-                    <div class="project-info">
-                        <div class="project-meta">
-                            <span class="project-category">05 / AI PROJECT</span>
-                            <h3 class="project-title">MINDFLOW</h3>
-                        </div>
-
-                        <span class="project-link">↗</span>
-                    </div>
-
-                </a>
-
-
-                <!-- 06 -->
-                <a href="https://clck.su/KOHjF"
-                   target="_blank"
-                   class="project reveal">
-
-                    <div class="project-image">
-                        <img src="images/karelia.jpg"
-                             alt="Karelia"
-                             class="project-photo"
-                             onerror="this.style.display='none'">
-
-                        <div class="image-placeholder">
-                            <span>IMAGE 06</span>
-                            <small>images/karelia.jpg</small>
-                        </div>
-
-                        <div class="project-overlay"></div>
-
-                        <div class="visual-text">KARELIA</div>
-                    </div>
-
-                    <div class="project-info">
-                        <div class="project-meta">
-                            <span class="project-category">06 / CONCEPT</span>
-                            <h3 class="project-title">KARELIA</h3>
-                        </div>
-
-                        <span class="project-link">↗</span>
-                    </div>
-
-                </a>
+                    </a>
+                </article>
 
             </div>
-
         </div>
     </section>
-
 
     <!-- REAL CLIENT -->
     <section class="client section">
         <div class="container">
 
-            <div class="section-label">03 / REAL CLIENT</div>
+            <div class="section-head reveal">
+                <span class="section-number">03</span>
+                <span class="section-label">REAL CLIENT PROJECT</span>
+            </div>
 
-            <div class="client-project reveal">
+            <div class="client-card reveal">
 
                 <div class="client-content">
-
                     <span class="client-badge">
-                        COMMERCIAL PROJECT
+                        <span></span>
+                        LIVE PROJECT
                     </span>
 
                     <h2>
                         Психолог<br>
-                        <span>для мам.</span>
+                        <em>для мам.</em>
                     </h2>
 
                     <p>
-                        Реальный коммерческий проект,
-                        разработанный под конкретного клиента.
+                        Реальный сайт, разработанный для клиента.
+                        Полноценный проект с продуманной структурой,
+                        визуальной системой и адаптацией под мобильные устройства.
                     </p>
 
                     <a href="https://психологдлямам.рф/"
                        target="_blank"
-                       class="btn btn-primary">
-                        Открыть сайт
-                        <span class="btn-arrow">↗</span>
+                       class="btn btn-primary magnetic">
+                        <span>Открыть сайт</span>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 19L19 5M8 5h11v11"/>
+                        </svg>
                     </a>
-
                 </div>
 
                 <a href="https://психологдлямам.рф/"
                    target="_blank"
-                   class="client-visual">
+                   class="client-image tilt"
+                   data-cursor="OPEN">
 
                     <img src="images/psycholog.jpg"
                          alt="Психолог для мам"
-                         class="client-photo"
-                         onerror="this.style.display='none'">
+                         loading="lazy">
 
                     <div class="image-placeholder">
-                        <span>CLIENT PREVIEW</span>
-                        <small>images/psycholog.jpg</small>
+                        ПСИХОЛОГ<br>ДЛЯ МАМ
                     </div>
 
-                    <div class="client-visual-title">
-                        психологдлямам.рф
+                    <div class="client-image-overlay"></div>
+
+                    <div class="client-open">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 19L19 5M8 5h11v11"/>
+                        </svg>
                     </div>
-
-                    <span class="visual-open">↗</span>
-
                 </a>
 
             </div>
-
         </div>
     </section>
-
 
     <!-- SERVICES -->
-    <section id="services" class="services section">
+    <section class="services section" id="services">
         <div class="container">
 
-            <div class="section-label">04 / WHAT I DO</div>
-
-            <div class="services-list">
-
-                <div class="service reveal">
-                    <span class="service-number">01</span>
-
-                    <div class="service-icon">↗</div>
-
-                    <h3>Landing Pages</h3>
-
-                    <p>
-                        Сайты, которые продают,
-                        презентуют продукт и выделяют
-                        бизнес среди конкурентов.
-                    </p>
-
-                    <span class="service-arrow">↗</span>
-                </div>
-
-
-                <div class="service reveal">
-                    <span class="service-number">02</span>
-
-                    <div class="service-icon">✦</div>
-
-                    <h3>Interactive Web</h3>
-
-                    <p>
-                        Анимации, нестандартные интерфейсы,
-                        интерактивные элементы и эффектные
-                        digital-концепции.
-                    </p>
-
-                    <span class="service-arrow">↗</span>
-                </div>
-
-
-                <div class="service reveal">
-                    <span class="service-number">03</span>
-
-                    <div class="service-icon">AI</div>
-
-                    <h3>AI Ready</h3>
-
-                    <p>
-                        Сайты, которые можно дополнить
-                        AI-консультантом, автоматизацией
-                        и другими умными функциями.
-                    </p>
-
-                    <span class="service-arrow">↗</span>
-                </div>
-
+            <div class="section-head reveal">
+                <span class="section-number">04</span>
+                <span class="section-label">SERVICES</span>
             </div>
 
+            <div class="services-heading">
+                <h2 class="section-title reveal">
+                    Что могу<br>
+                    <span>сделать.</span>
+                </h2>
+
+                <p class="reveal">
+                    От идеи до готового сайта,
+                    который можно показывать клиентам уже сегодня.
+                </p>
+            </div>
+
+            <div class="services-grid">
+
+                <article class="service reveal magnetic-card">
+                    <div class="service-top">
+                        <span>01</span>
+
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="4" width="18" height="16" rx="2"/>
+                                <path d="M3 9h18M8 14h8M8 17h5"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Сайт<br>под ключ</h3>
+                        <p>
+                            Дизайн, структура, адаптив,
+                            анимации и разработка.
+                        </p>
+                    </div>
+
+                    <div class="service-bottom">
+                        <span>01 / 03</span>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12h13M13 6l6 6-6 6"/>
+                        </svg>
+                    </div>
+                </article>
+
+                <article class="service reveal magnetic-card">
+                    <div class="service-top">
+                        <span>02</span>
+
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="8"/>
+                                <path d="M8 12h8M12 8v8"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Landing<br>Page</h3>
+                        <p>
+                            Сильный одностраничник,
+                            который ведёт пользователя к действию.
+                        </p>
+                    </div>
+
+                    <div class="service-bottom">
+                        <span>02 / 03</span>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12h13M13 6l6 6-6 6"/>
+                        </svg>
+                    </div>
+                </article>
+
+                <article class="service reveal magnetic-card">
+                    <div class="service-top">
+                        <span>03</span>
+
+                        <div class="service-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 3l2.2 6.8L21 12l-6.8 2.2L12 21l-2.2-6.8L3 12l6.8-2.2L12 3z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>AI &<br>Interactive</h3>
+                        <p>
+                            Современные интерактивные элементы,
+                            AI-функции и нестандартные решения.
+                        </p>
+                    </div>
+
+                    <div class="service-bottom">
+                        <span>03 / 03</span>
+                        <svg viewBox="0 0 24 24">
+                            <path d="M5 12h13M13 6l6 6-6 6"/>
+                        </svg>
+                    </div>
+                </article>
+
+            </div>
         </div>
     </section>
 
-
     <!-- CONTACT -->
-    <section id="contact" class="contact section">
-
-        <div class="contact-glow"></div>
-
+    <section class="contact section" id="contact">
         <div class="container">
 
-            <div class="section-label">05 / CONTACT</div>
+            <div class="contact-card reveal">
 
-            <div class="contact-content reveal">
+                <div class="contact-orb"></div>
 
-                <h2>
-                    Есть идея?<br>
-                    <span>Давай сделаем.</span>
-                </h2>
+                <div class="contact-content">
+                    <span class="section-label">05 / CONTACT</span>
 
-                <p>
-                    Напиши мне в Telegram —
-                    обсудим задачу и придумаем,
-                    как сделать её сильнее.
-                </p>
+                    <h2>
+                        Есть идея?<br>
+                        <span>Давайте сделаем.</span>
+                    </h2>
 
-                <a href="https://t.me/Jexonflier"
-                   target="_blank"
-                   class="telegram-button">
+                    <p>
+                        Напиши мне в Telegram — обсудим задачу,
+                        сроки и стоимость без лишней бюрократии.
+                    </p>
 
-                    <span class="tg-icon">✈</span>
+                    <a href="https://t.me/Jexonflier"
+                       target="_blank"
+                       class="telegram-button magnetic">
 
-                    <div>
-                        <small>TELEGRAM</small>
-                        <strong>@Jexonflier</strong>
-                    </div>
+                        <span class="telegram-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M21 4L3.8 10.6c-.9.35-.9.85-.16 1.08l4.4 1.37 1.7 5.3c.22.6.11.85.73.85.48 0 .69-.22.95-.48l2.12-2.06 4.4 3.25c.8.44 1.38.21 1.58-.74L22 5.06C22.3 3.9 21.55 3.43 21 4zM9 12.7l8.5-5.36c.42-.25.8-.11.49.16l-7 6.33-.27 2.82z"/>
+                            </svg>
+                        </span>
 
-                    <span class="tg-arrow">↗</span>
+                        <span>@Jexonflier</span>
 
-                </a>
+                        <svg class="telegram-arrow" viewBox="0 0 24 24">
+                            <path d="M5 19L19 5M8 5h11v11"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="contact-number">
+                    05
+                </div>
 
             </div>
 
@@ -575,27 +745,23 @@
 
 </main>
 
-
-<footer>
+<footer class="footer">
     <div class="container footer-inner">
+        <span>© 2026 JEXONFLIER</span>
 
-        <div class="footer-logo">
-            JEXONFLIER<span>.</span>
-        </div>
+        <span class="footer-center">
+            DIGITAL DESIGN & DEVELOPMENT
+        </span>
 
-        <div>
-            © 2026 — Digital projects
-        </div>
-
-        <a href="https://t.me/Jexonflier" target="_blank">
-            Telegram ↗
+        <a href="#top" class="back-top magnetic">
+            BACK TO TOP
+            <svg viewBox="0 0 24 24">
+                <path d="M12 19V5M6 11l6-6 6 6"/>
+            </svg>
         </a>
-
     </div>
 </footer>
 
-
 <script src="script.js"></script>
-
 </body>
 </html>
