@@ -53,21 +53,22 @@
       category: "WEB / FITNESS",
       description:
         "Современный сайт для fitness-направления с акцентом на структуру, динамику и понятный пользовательский путь.",
-      image: "images/FITNESS.jpg",
+      image: "images/FITNESS.svg",
       type: "Website",
       field: "Fitness / Digital product",
-      url: "https://clck.su/VczEP"
+      url: "https://clck.su/VczEP",
+      unavailable: true
     },
 
     mindflow: {
       number: "05 / PROJECT",
       title: "MindFlow",
-      category: "WEB / WELLNESS",
+      category: "WEB / AI / SAAS",
       description:
-        "Спокойный digital-концепт для психологического и wellness-проекта с чистой типографикой и мягкой визуальной системой.",
+        "Концепт сайта AI-ассистента: возможности продукта, демонстрация интерфейса и тарифные планы. Акцент на понятной подаче цифрового сервиса.",
       image: "images/MINDFLOW.jpg",
       type: "Landing page",
-      field: "Psychology / Wellness",
+      field: "AI / SaaS",
       url: "https://clck.su/lqjLB"
     },
 
@@ -155,6 +156,8 @@
 
     if (loaderPercent) {
       loaderPercent.textContent = `${loaderValue}%`;
+      const bar = document.querySelector(".loader__line span");
+      if (bar) bar.style.width = `${loaderValue}%`;
     }
 
     if (loaderValue >= 100) {
@@ -267,13 +270,17 @@
       field.textContent = project.field;
     }
 
+    const availability = document.getElementById("projectAvailability");
+    if (availability) availability.hidden = !project.unavailable;
     if (live) {
+      live.hidden = !!project.unavailable;
       live.href = project.url;
       live.target = "_blank";
       live.rel = "noopener noreferrer";
     }
 
     if (image) {
+      image.classList.remove("image-failed");
       image.src = project.image;
       image.alt = project.title;
 
@@ -302,6 +309,7 @@
         page.dataset.page === route.page;
 
       page.classList.toggle("active", isActive);
+      page.hidden = !isActive;
       page.setAttribute(
         "aria-hidden",
         isActive ? "false" : "true"

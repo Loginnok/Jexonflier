@@ -107,7 +107,7 @@ svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke
 .page{display:none;min-height:100vh}
 .page.active{display:block;animation:pageIn .75s var(--ease)}
 @keyframes pageIn{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:none}}
-.page--home{display:block}
+.page--home{display:none}
 .page--home.active{display:block}
 
 /* hero */
@@ -358,3 +358,13 @@ svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke
 @media(prefers-reduced-motion:reduce){
   *,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+/* Portfolio availability and keyboard navigation */
+[hidden]{display:none!important}
+.project-availability{color:var(--muted);font-size:14px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--lime);outline-offset:6px}
+
+.project-card__image img,.client-feature__image img{object-position:top center}
+.project-card__overlay{background:linear-gradient(180deg,transparent,rgba(0,0,0,.16))}
+.project-card:hover .project-card__overlay{background:transparent}
+.project-page__image img{object-fit:contain;object-position:top center}
+
