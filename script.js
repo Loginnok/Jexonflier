@@ -9,91 +9,91 @@
      PROJECT DATA
      ======================================================= */
 
-  const projects = {
-    aurel: {
-      number: "01 / PROJECT",
-      title: "Aurel",
-      category: "WEB / PREMIUM",
-      description:
-        "Премиальный landing page с акцентом на продукт, визуальную подачу и ощущение дорогого digital-бренда.",
-      image: "images/aurel.jpg",
-      type: "Landing page",
-      field: "Premium product",
-      url: "https://loginnok.github.io/xd/"
-    },
+ const projects = {
+  aurel: {
+    number: "01 / PROJECT",
+    title: "Aurel",
+    category: "WEB / PREMIUM",
+    description:
+      "Премиальный landing page с акцентом на продукт, визуальную подачу и ощущение дорогого digital-бренда.",
+    image: "AUREL.png",
+    type: "Landing page",
+    field: "Premium product",
+    url: "https://loginnok.github.io/xd/"
+  },
 
-    dagestan: {
-      number: "02 / PROJECT",
-      title: "Dagestan",
-      category: "WEB / TRAVEL",
-      description:
-        "Сайт о Дагестане с визуальным акцентом на атмосферу места, путешествия и сильную подачу контента.",
-      image: "images/dagestan.jpg",
-      type: "Website",
-      field: "Travel / Destination",
-      url: "https://clck.su/cQWrJ"
-    },
+  dagestan: {
+    number: "02 / PROJECT",
+    title: "Dagestan",
+    category: "WEB / TRAVEL",
+    description:
+      "Сайт о Дагестане с визуальным акцентом на атмосферу места, путешествия и сильную подачу контента.",
+    image: "DAGESTAN.jpg",
+    type: "Website",
+    field: "Travel / Destination",
+    url: "https://clck.su/cQWrJ"
+  },
 
-    leather: {
-      number: "03 / PROJECT",
-      title: "Leather",
-      category: "WEB / FASHION",
-      description:
-        "Минималистичный digital-концепт для fashion-проекта с фокусом на фотографии, продукт и премиальную эстетику.",
-      image: "images/leather.jpg",
-      type: "Landing page",
-      field: "Fashion / Product",
-      url: "https://clck.su/yJCnE"
-    },
+  leather: {
+    number: "03 / PROJECT",
+    title: "Leather",
+    category: "WEB / FASHION",
+    description:
+      "Минималистичный digital-концепт для fashion-проекта с фокусом на фотографии, продукт и премиальную эстетику.",
+    image: "LEATHER.jpg",
+    type: "Landing page",
+    field: "Fashion / Product",
+    url: "https://clck.su/yJCnE"
+  },
 
-    fitness: {
-      number: "04 / PROJECT",
-      title: "FitnessPro",
-      category: "WEB / FITNESS",
-      description:
-        "Современный сайт для fitness-направления с акцентом на структуру, динамику и понятный пользовательский путь.",
-      image: "images/fitness.jpg",
-      type: "Website",
-      field: "Fitness / Digital product",
-      url: "https://clck.su/VczEP"
-    },
+  fitness: {
+    number: "04 / PROJECT",
+    title: "FitnessPro",
+    category: "WEB / FITNESS",
+    description:
+      "Современный сайт для fitness-направления с акцентом на структуру, динамику и понятный пользовательский путь.",
+    image: "FITNESS.jpg",
+    type: "Website",
+    field: "Fitness / Digital product",
+    url: "https://clck.su/VczEP"
+  },
 
-    mindflow: {
-      number: "05 / PROJECT",
-      title: "MindFlow",
-      category: "WEB / WELLNESS",
-      description:
-        "Спокойный digital-концепт для психологического и wellness-проекта с чистой типографикой и мягкой визуальной системой.",
-      image: "images/mindflow.jpg",
-      type: "Landing page",
-      field: "Psychology / Wellness",
-      url: "https://clck.su/lqjLB"
-    },
+  mindflow: {
+    number: "05 / PROJECT",
+    title: "MindFlow",
+    category: "WEB / WELLNESS",
+    description:
+      "Спокойный digital-концепт для психологического и wellness-проекта с чистой типографикой и мягкой визуальной системой.",
+    image: "MINDFLOW.jpg",
+    type: "Landing page",
+    field: "Psychology / Wellness",
+    url: "https://clck.su/lqjLB"
+  },
 
-    karelia: {
-      number: "06 / PROJECT",
-      title: "Karelia",
-      category: "WEB / TRAVEL",
-      description:
-        "Туристический сайт с атмосферной визуальной подачей Карелии, природой и акцентом на впечатление от первого экрана.",
-      image: "images/karelia.jpg",
-      type: "Website",
-      field: "Travel / Tourism",
-      url: "https://clck.su/KOHjF"
-    },
+  karelia: {
+    number: "06 / PROJECT",
+    title: "Karelia",
+    category: "WEB / TRAVEL",
+    description:
+      "Туристический сайт с атмосферной визуальной подачей Карелии, природой и акцентом на впечатление от первого экрана.",
+    image: "KARELIA.png",
+    type: "Website",
+    field: "Travel / Tourism",
+    url: "https://clck.su/KOHjF"
+  },
 
-    psycholog: {
-      number: "07 / CLIENT",
-      title: "Психолог для мам",
-      category: "CLIENT / PSYCHOLOGY",
-      description:
-        "Реальный клиентский проект психолога. Сайт построен вокруг доверия, спокойной визуальной системы и понятного пути пользователя к записи.",
-      image: "images/psycholog_mam.jpg",
-      type: "Client website",
-      field: "Psychology",
-      url: "https://психологдлямам.рф/"
-    }
-  };
+  psycholog: {
+    number: "07 / CLIENT",
+    title: "Психолог для мам",
+    category: "CLIENT / PSYCHOLOGY",
+    description:
+      "Реальный клиентский проект психолога. Сайт построен вокруг доверия, спокойной визуальной системы и понятного пути пользователя к записи.",
+    image: "PSYCHOLOG_MAM.jpg",
+    type: "Client website",
+    field: "Psychology",
+    url: "https://психологдлямам.рф/"
+  }
+};
 
   /* =======================================================
      DOM
