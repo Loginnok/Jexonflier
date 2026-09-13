@@ -1,349 +1,741 @@
-/* script.js */
 (() => {
   "use strict";
 
+  /* =========================================================
+     JEXONFLIER — SCRIPT
+     Router + Projects + Animations + Mobile Menu
+     ========================================================= */
+
+  /* =========================================================
+     PROJECTS
+     ========================================================= */
+
   const projects = {
-    aurel:{
-      number:"01 / PROJECT",
-      title:"Aurel",
-      category:"WEB / PREMIUM",
-      description:"Премиальный landing page с акцентом на продукт, визуальную подачу и ощущение дорогого digital-бренда.",
-      image:"images/aurel.jpg",
-      type:"Landing page",
-      field:"Premium product",
-      url:"https://loginnok.github.io/xd/"
+    aurel: {
+      number: "01 / PROJECT",
+      title: "Aurel",
+      category: "WEB / PREMIUM",
+      description:
+        "Премиальный landing page с акцентом на продукт, визуальную подачу и ощущение дорогого digital-бренда.",
+      image: "images/aurel.jpg",
+      type: "Landing page",
+      field: "Premium product",
+      url: "https://loginnok.github.io/xd/"
     },
-    dagestan:{
-      number:"02 / PROJECT",
-      title:"Dagestan",
-      category:"WEB / TRAVEL",
-      description:"Сайт о Дагестане с визуальным акцентом на атмосферу места, путешествия и сильную подачу контента.",
-      image:"images/dagestan.jpg",
-      type:"Website",
-      field:"Travel / Destination",
-      url:"https://clck.su/cQWrJ"
+
+    dagestan: {
+      number: "02 / PROJECT",
+      title: "Dagestan",
+      category: "WEB / TRAVEL",
+      description:
+        "Сайт о Дагестане с визуальным акцентом на атмосферу места, путешествия и сильную подачу контента.",
+      image: "images/dagestan.jpg",
+      type: "Website",
+      field: "Travel / Destination",
+      url: "https://clck.su/cQWrJ"
     },
-    leather:{
-      number:"03 / PROJECT",
-      title:"Leather",
-      category:"WEB / FASHION",
-      description:"Минималистичный digital-концепт для fashion-проекта с фокусом на фотографии, продукт и премиальную эстетику.",
-      image:"images/leather.jpg",
-      type:"Landing page",
-      field:"Fashion / Product",
-      url:"https://clck.su/yJCnE"
+
+    leather: {
+      number: "03 / PROJECT",
+      title: "Leather",
+      category: "WEB / FASHION",
+      description:
+        "Минималистичный digital-концепт для fashion-проекта с фокусом на фотографии, продукт и премиальную эстетику.",
+      image: "images/leather.jpg",
+      type: "Landing page",
+      field: "Fashion / Product",
+      url: "https://clck.su/yJCnE"
     },
-    fitness:{
-      number:"04 / PROJECT",
-      title:"FitnessPro",
-      category:"WEB / FITNESS",
-      description:"Современный сайт для fitness-направления с акцентом на структуру, динамику и понятный пользовательский путь.",
-      image:"images/fitness.jpg",
-      type:"Website",
-      field:"Fitness / Digital product",
-      url:"https://clck.su/VczEP"
+
+    fitness: {
+      number: "04 / PROJECT",
+      title: "FitnessPro",
+      category: "WEB / FITNESS",
+      description:
+        "Современный сайт для fitness-направления с акцентом на структуру, динамику и понятный пользовательский путь.",
+      image: "images/fitness.jpg",
+      type: "Website",
+      field: "Fitness / Digital product",
+      url: "https://clck.su/VczEP"
     },
-    mindflow:{
-      number:"05 / PROJECT",
-      title:"MindFlow",
-      category:"WEB / WELLNESS",
-      description:"Спокойный digital-концепт для психологического и wellness-проекта с чистой типографикой и мягкой визуальной системой.",
-      image:"images/mindflow.jpg",
-      type:"Landing page",
-      field:"Psychology / Wellness",
-      url:"https://clck.su/lqjLB"
+
+    mindflow: {
+      number: "05 / PROJECT",
+      title: "MindFlow",
+      category: "WEB / WELLNESS",
+      description:
+        "Спокойный digital-концепт для психологического и wellness-проекта с чистой типографикой и мягкой визуальной системой.",
+      image: "images/mindflow.jpg",
+      type: "Landing page",
+      field: "Psychology / Wellness",
+      url: "https://clck.su/lqjLB"
     },
-    karelia:{
-      number:"06 / PROJECT",
-      title:"Karelia",
-      category:"WEB / TRAVEL",
-      description:"Туристический сайт с атмосферной визуальной подачей Карелии, природой и акцентом на впечатление от первого экрана.",
-      image:"images/karelia.jpg",
-      type:"Website",
-      field:"Travel / Tourism",
-      url:"https://clck.su/KOHjF"
+
+    karelia: {
+      number: "06 / PROJECT",
+      title: "Karelia",
+      category: "WEB / TRAVEL",
+      description:
+        "Туристический сайт с атмосферной визуальной подачей Карелии, природой и акцентом на впечатление от первого экрана.",
+      image: "images/karelia.jpg",
+      type: "Website",
+      field: "Travel / Tourism",
+      url: "https://clck.su/KOHjF"
     },
-    psycholog:{
-      number:"07 / CLIENT",
-      title:"Психолог для мам",
-      category:"CLIENT / PSYCHOLOGY",
-      description:"Реальный клиентский проект психолога. Сайт построен вокруг доверия, спокойной визуальной системы и понятного пути пользователя к записи.",
-      image:"images/psycholog_mam.jpg",
-      type:"Client website",
-      field:"Psychology",
-      url:"https://психологдлямам.рф/"
+
+    psycholog: {
+      number: "07 / CLIENT",
+      title: "Психолог для мам",
+      category: "CLIENT / PSYCHOLOGY",
+      description:
+        "Реальный клиентский проект психолога. Сайт построен вокруг доверия, спокойной визуальной системы и понятного пути пользователя к записи.",
+      image: "images/psycholog_mam.jpg",
+      type: "Client website",
+      field: "Psychology",
+      url: "https://психологдлямам.рф/"
     }
   };
 
-  const body=document.body;
-  const header=document.getElementById("header");
-  const loader=document.getElementById("loader");
-  const loaderPercent=document.getElementById("loaderPercent");
-  const progress=document.getElementById("scrollProgress");
-  const cursor=document.getElementById("cursorGlow");
-  const menuToggle=document.getElementById("menuToggle");
 
-  /* LOADER */
-  let load=0;
-  const loadTimer=setInterval(()=>{
-    load+=Math.floor(Math.random()*8)+4;
-    if(load>=100){
-      load=100;
-      clearInterval(loadTimer);
-      setTimeout(()=>loader?.classList.add("done"),350);
+  /* =========================================================
+     DOM
+     ========================================================= */
+
+  const body = document.body;
+
+  const loader = document.getElementById("loader");
+  const loaderPercent = document.getElementById("loaderPercent");
+
+  const header = document.getElementById("header");
+  const progress = document.getElementById("scrollProgress");
+  const cursor = document.getElementById("cursorGlow");
+
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  const pages = document.querySelectorAll(".page");
+
+
+  /* =========================================================
+     SAFETY
+     ========================================================= */
+
+  function safe(fn) {
+    try {
+      fn();
+    } catch (error) {
+      console.warn("JEXONFLIER:", error);
     }
-    if(loaderPercent) loaderPercent.textContent=String(load).padStart(2,"0");
-    const line=loader?.querySelector(".loader__line span");
-    if(line) line.style.width=load+"%";
-  },70);
-
-  /* SCROLL */
-  function scrollUI(){
-    const y=window.scrollY;
-    header?.classList.toggle("scrolled",y>20);
-
-    const max=document.documentElement.scrollHeight-window.innerHeight;
-    if(progress) progress.style.width=(max>0 ? y/max*100 : 0)+"%";
-  }
-  window.addEventListener("scroll",scrollUI,{passive:true});
-  scrollUI();
-
-  /* CURSOR */
-  let mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
-  window.addEventListener("pointermove",e=>{
-    mx=e.clientX;my=e.clientY;
-    if(cursor) cursor.style.opacity="1";
-  },{passive:true});
-
-  function cursorLoop(){
-    cx+=(mx-cx)*.1;
-    cy+=(my-cy)*.1;
-    if(cursor) cursor.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;
-    requestAnimationFrame(cursorLoop);
-  }
-  cursorLoop();
-
-  /* MENU */
-  function closeMenu(){
-    body.classList.remove("menu-open");
-    menuToggle?.setAttribute("aria-expanded","false");
   }
 
-  menuToggle?.addEventListener("click",()=>{
-    const open=!body.classList.contains("menu-open");
-    body.classList.toggle("menu-open",open);
-    menuToggle.setAttribute("aria-expanded",String(open));
+
+  /* =========================================================
+     LOADER
+     ========================================================= */
+
+  function hideLoader() {
+    if (!loader) return;
+
+    loader.classList.add("done");
+
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 700);
+  }
+
+  let loaderValue = 0;
+
+  const loaderTimer = setInterval(() => {
+    loaderValue += Math.floor(Math.random() * 12) + 5;
+
+    if (loaderValue >= 100) {
+      loaderValue = 100;
+      clearInterval(loaderTimer);
+    }
+
+    if (loaderPercent) {
+      loaderPercent.textContent = `${loaderValue}%`;
+    }
+
+    if (loaderValue >= 100) {
+      setTimeout(hideLoader, 250);
+    }
+  }, 90);
+
+  window.addEventListener("load", () => {
+    setTimeout(hideLoader, 300);
   });
 
-  /* ROUTER */
-  const validPages=["home","works","services","about","contact","project"];
+  /* На случай ошибки любого другого JS */
+  setTimeout(hideLoader, 2500);
 
-  function route(){
-    const hash=location.hash.replace(/^#/,"");
-    if(hash.startsWith("project/")){
-      return {page:"project",slug:hash.split("/")[1]};
+
+  /* =========================================================
+     ROUTER
+     ========================================================= */
+
+  const validPages = new Set([
+    "home",
+    "works",
+    "services",
+    "about",
+    "contact",
+    "project"
+  ]);
+
+
+  function getRoute() {
+    let hash = window.location.hash || "#home";
+
+    hash = decodeURIComponent(hash.replace(/^#/, ""));
+
+    /* project/aurel */
+    if (hash.startsWith("project/")) {
+      const slug = hash
+        .replace("project/", "")
+        .split("/")[0]
+        .trim()
+        .toLowerCase();
+
+      if (projects[slug]) {
+        return {
+          page: "project",
+          slug
+        };
+      }
+
+      return {
+        page: "works"
+      };
     }
-    return {page:validPages.includes(hash)?hash:"home"};
+
+    /* обычные страницы */
+    if (validPages.has(hash)) {
+      return {
+        page: hash
+      };
+    }
+
+    return {
+      page: "home"
+    };
   }
 
-  let routing=false;
 
-  function navigate(hash,replace=false){
-    if(!hash) hash="#home";
+  /* =========================================================
+     PROJECT DATA
+     ========================================================= */
 
-    if(hash.startsWith("#project/") && !projects[hash.split("/")[1]]){
-      hash="#works";
+  function fillProject(slug) {
+    const project = projects[slug];
+
+    if (!project) {
+      window.location.hash = "#works";
+      return;
     }
 
-    if(location.hash===hash){
+    const number = document.getElementById("projectNumber");
+    const category = document.getElementById("projectCategory");
+    const title = document.getElementById("projectTitle");
+    const description = document.getElementById("projectDescription");
+    const live = document.getElementById("projectLive");
+    const image = document.getElementById("projectImage");
+    const type = document.getElementById("projectType");
+    const field = document.getElementById("projectField");
+
+    if (number) {
+      number.textContent = project.number;
+    }
+
+    if (category) {
+      category.textContent = project.category;
+    }
+
+    if (title) {
+      title.textContent = project.title;
+    }
+
+    if (description) {
+      description.textContent = project.description;
+    }
+
+    if (type) {
+      type.textContent = project.type;
+    }
+
+    if (field) {
+      field.textContent = project.field;
+    }
+
+    if (live) {
+      live.href = project.url;
+      live.target = "_blank";
+      live.rel = "noopener noreferrer";
+    }
+
+    if (image) {
+      image.src = project.image;
+      image.alt = project.title;
+
+      image.onerror = () => {
+        image.classList.add("image-failed");
+      };
+    }
+
+    document.title = `${project.title} — JEXONFLIER`;
+  }
+
+
+  /* =========================================================
+     PAGE ROUTING
+     ========================================================= */
+
+  function renderRoute() {
+    const route = getRoute();
+
+    /* закрываем мобильное меню */
+    closeMobileMenu();
+
+    /* показываем нужную страницу */
+    pages.forEach((page) => {
+      const isActive =
+        page.dataset.page === route.page;
+
+      page.classList.toggle("active", isActive);
+      page.setAttribute(
+        "aria-hidden",
+        isActive ? "false" : "true"
+      );
+    });
+
+    body.dataset.page = route.page;
+
+    /* проект */
+    if (route.page === "project") {
+      fillProject(route.slug);
+    } else {
+      document.title = "JEXONFLIER — Digital Design & Websites";
+    }
+
+    /* наверх */
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto"
+    });
+
+    /* небольшая задержка для появления элементов */
+    setTimeout(() => {
+      safe(initReveal);
+      safe(initTilt);
+      safe(initMagnetic);
+    }, 50);
+  }
+
+
+  /* =========================================================
+     NAVIGATION
+     ========================================================= */
+
+  function navigate(hash) {
+    if (!hash) {
+      hash = "#home";
+    }
+
+    if (!hash.startsWith("#")) {
+      hash = `#${hash}`;
+    }
+
+    /* неправильный проект */
+    if (hash.startsWith("#project/")) {
+      const slug = hash
+        .replace("#project/", "")
+        .split("/")[0]
+        .trim()
+        .toLowerCase();
+
+      if (!projects[slug]) {
+        hash = "#works";
+      }
+    }
+
+    /* тот же hash */
+    if (window.location.hash === hash) {
       renderRoute();
       return;
     }
 
-    routing=true;
-    if(replace) history.replaceState(null,"",hash);
-    else history.pushState(null,"",hash);
+    /* ВАЖНО:
+       Используем именно location.hash.
+       Это гарантированно вызывает hashchange.
+    */
+    window.location.hash = hash;
+  }
 
+
+  /* =========================================================
+     HASH CHANGE
+     ========================================================= */
+
+  window.addEventListener("hashchange", () => {
     renderRoute();
-    requestAnimationFrame(()=>routing=false);
-  }
-
-  function renderRoute(){
-    const current=route();
-    closeMenu();
-
-    document.querySelectorAll(".page").forEach(page=>{
-      page.classList.toggle("active",page.dataset.page===current.page);
-    });
-
-    body.dataset.page=current.page;
-
-    if(current.page==="project"){
-      fillProject(current.slug);
-    }
-
-    if(current.page!=="project"){
-      document.querySelectorAll(".project-page .reveal").forEach(el=>el.classList.remove("visible"));
-    }
-
-    window.scrollTo({top:0,behavior:"auto"});
-    setTimeout(initReveals,50);
-    setTimeout(initTilt,80);
-    setTimeout(initMagnetic,100);
-  }
-
-  function fillProject(slug){
-    const p=projects[slug] || projects.aurel;
-
-    document.getElementById("projectNumber").textContent=p.number;
-    document.getElementById("projectCategory").textContent=p.category;
-    document.getElementById("projectTitle").textContent=p.title;
-    document.getElementById("projectDescription").textContent=p.description;
-    document.getElementById("projectType").textContent=p.type;
-    document.getElementById("projectField").textContent=p.field;
-
-    const image=document.getElementById("projectImage");
-    image.src=p.image;
-    image.alt=p.title;
-
-    const live=document.getElementById("projectLive");
-    live.href=p.url;
-  }
-
-  window.addEventListener("hashchange",renderRoute);
-  window.addEventListener("popstate",renderRoute);
-
-  /* ALL INTERNAL HASH LINKS */
-  document.addEventListener("click",e=>{
-    const link=e.target.closest("a[href^='#']");
-    if(!link) return;
-
-    const hash=link.getAttribute("href");
-    if(!hash || hash==="#") return;
-
-    e.preventDefault();
-    navigate(hash);
   });
 
-  /* REVEAL */
-  let revealObserver;
 
-  function initReveals(){
-    if(revealObserver) revealObserver.disconnect();
+  window.addEventListener("popstate", () => {
+    renderRoute();
+  });
 
-    revealObserver=new IntersectionObserver(entries=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add("visible");
-          revealObserver.unobserve(entry.target);
+
+  /* =========================================================
+     INTERNAL LINKS
+     ========================================================= */
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a");
+
+    if (!link) return;
+
+    const href = link.getAttribute("href");
+
+    if (!href) return;
+
+    /* только внутренние hash-ссылки */
+    if (!href.startsWith("#")) return;
+
+    /* пустая ссылка */
+    if (href === "#") return;
+
+    event.preventDefault();
+
+    navigate(href);
+  });
+
+
+  /* =========================================================
+     MOBILE MENU
+     ========================================================= */
+
+  function openMobileMenu() {
+    if (!mobileMenu) return;
+
+    mobileMenu.classList.add("active");
+    body.classList.add("menu-open");
+
+    if (menuToggle) {
+      menuToggle.classList.add("active");
+      menuToggle.setAttribute("aria-expanded", "true");
+    }
+  }
+
+
+  function closeMobileMenu() {
+    if (!mobileMenu) return;
+
+    mobileMenu.classList.remove("active");
+    body.classList.remove("menu-open");
+
+    if (menuToggle) {
+      menuToggle.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  }
+
+
+  if (menuToggle) {
+    menuToggle.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (mobileMenu && mobileMenu.classList.contains("active")) {
+        closeMobileMenu();
+      } else {
+        openMobileMenu();
+      }
+    });
+  }
+
+
+  /* =========================================================
+     ESCAPE
+     ========================================================= */
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMobileMenu();
+    }
+  });
+
+
+  /* =========================================================
+     SCROLL PROGRESS
+     ========================================================= */
+
+  function updateScrollProgress() {
+    if (!progress) return;
+
+    const scrollTop =
+      window.scrollY || document.documentElement.scrollTop;
+
+    const height =
+      document.documentElement.scrollHeight -
+      window.innerHeight;
+
+    if (height <= 0) {
+      progress.style.width = "0%";
+      return;
+    }
+
+    const percent =
+      Math.min(100, Math.max(0, (scrollTop / height) * 100));
+
+    progress.style.width = `${percent}%`;
+  }
+
+
+  function updateHeader() {
+    if (!header) return;
+
+    if (window.scrollY > 30) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  }
+
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      updateScrollProgress();
+      updateHeader();
+    },
+    { passive: true }
+  );
+
+
+  /* =========================================================
+     CURSOR GLOW
+     ========================================================= */
+
+  if (cursor && window.matchMedia("(pointer: fine)").matches) {
+    let mouseX = 0;
+    let mouseY = 0;
+
+    let currentX = 0;
+    let currentY = 0;
+
+    window.addEventListener(
+      "mousemove",
+      (event) => {
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+      },
+      { passive: true }
+    );
+
+    function animateCursor() {
+      currentX += (mouseX - currentX) * 0.12;
+      currentY += (mouseY - currentY) * 0.12;
+
+      cursor.style.transform =
+        `translate3d(${currentX}px, ${currentY}px, 0)`;
+
+      requestAnimationFrame(animateCursor);
+    }
+
+    animateCursor();
+  }
+
+
+  /* =========================================================
+     REVEAL ANIMATIONS
+     ========================================================= */
+
+  let revealObserver = null;
+
+
+  function initReveal() {
+    const elements =
+      document.querySelectorAll(
+        ".reveal, .fade-up, [data-reveal]"
+      );
+
+    if (!elements.length) return;
+
+    /* если observer уже существует — не создаём новый */
+    if (!revealObserver) {
+      revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              entry.target.classList.add("revealed");
+            }
+          });
+        },
+        {
+          threshold: 0.08,
+          rootMargin: "0px 0px -40px 0px"
         }
-      });
-    },{threshold:.12});
+      );
+    }
 
-    document.querySelectorAll(".page.active .reveal").forEach((el,i)=>{
-      el.classList.remove("visible");
-      el.style.transitionDelay=Math.min(i*45,350)+"ms";
-      revealObserver.observe(el);
+    elements.forEach((element) => {
+      revealObserver.observe(element);
     });
   }
 
-  /* TILT */
-  function initTilt(){
-    if(matchMedia("(hover:none)").matches) return;
 
-    document.querySelectorAll("[data-tilt]").forEach(card=>{
-      if(card.dataset.tiltReady) return;
-      card.dataset.tiltReady="1";
+  /* =========================================================
+     PROJECT CARD TILT
+     ========================================================= */
 
-      card.addEventListener("pointermove",e=>{
-        if(!card.closest(".page.active")) return;
+  function initTilt() {
+    if (!window.matchMedia("(pointer: fine)").matches) {
+      return;
+    }
 
-        const r=card.getBoundingClientRect();
-        const x=(e.clientX-r.left)/r.width-.5;
-        const y=(e.clientY-r.top)/r.height-.5;
+    const cards =
+      document.querySelectorAll(
+        ".project-card, .work-card, [data-tilt]"
+      );
 
-        card.style.transform=
-          `perspective(1100px) rotateX(${y*-3.5}deg) rotateY(${x*3.5}deg) translateY(-4px)`;
+    cards.forEach((card) => {
+      if (card.dataset.tiltReady === "true") return;
+
+      card.dataset.tiltReady = "true";
+
+      card.addEventListener("mousemove", (event) => {
+        const rect = card.getBoundingClientRect();
+
+        const x =
+          event.clientX - rect.left;
+
+        const y =
+          event.clientY - rect.top;
+
+        const centerX =
+          rect.width / 2;
+
+        const centerY =
+          rect.height / 2;
+
+        const rotateX =
+          ((y - centerY) / centerY) * -3;
+
+        const rotateY =
+          ((x - centerX) / centerX) * 3;
+
+        card.style.transform =
+          `perspective(900px)
+           rotateX(${rotateX}deg)
+           rotateY(${rotateY}deg)
+           translateY(-4px)`;
       });
 
-      card.addEventListener("pointerleave",()=>{
-        card.style.transform="";
+      card.addEventListener("mouseleave", () => {
+        card.style.transform = "";
       });
     });
   }
 
-  /* MAGNETIC */
-  function initMagnetic(){
-    if(matchMedia("(hover:none)").matches) return;
 
-    document.querySelectorAll(".magnetic").forEach(el=>{
-      if(el.dataset.magneticReady) return;
-      el.dataset.magneticReady="1";
+  /* =========================================================
+     MAGNETIC BUTTONS
+     ========================================================= */
 
-      el.addEventListener("pointermove",e=>{
-        const r=el.getBoundingClientRect();
-        const x=e.clientX-r.left-r.width/2;
-        const y=e.clientY-r.top-r.height/2;
-        el.style.transform=`translate(${x*.12}px,${y*.12}px)`;
+  function initMagnetic() {
+    if (!window.matchMedia("(pointer: fine)").matches) {
+      return;
+    }
+
+    const elements =
+      document.querySelectorAll(
+        ".btn, .button, .magnetic, [data-magnetic]"
+      );
+
+    elements.forEach((element) => {
+      if (element.dataset.magneticReady === "true") {
+        return;
+      }
+
+      element.dataset.magneticReady = "true";
+
+      element.addEventListener("mousemove", (event) => {
+        const rect =
+          element.getBoundingClientRect();
+
+        const x =
+          event.clientX -
+          rect.left -
+          rect.width / 2;
+
+        const y =
+          event.clientY -
+          rect.top -
+          rect.height / 2;
+
+        element.style.transform =
+          `translate(${x * 0.12}px, ${y * 0.12}px)`;
       });
 
-      el.addEventListener("pointerleave",()=>{
-        el.style.transform="";
+      element.addEventListener("mouseleave", () => {
+        element.style.transform = "";
       });
     });
   }
 
-  /* PARALLAX */
-  function parallax(){
-    if(matchMedia("(prefers-reduced-motion:reduce)").matches) return;
 
-    document.querySelectorAll("[data-parallax]").forEach(el=>{
-      if(!el.closest(".page.active")) return;
-      const speed=Number(el.dataset.parallax)||.05;
-      const rect=el.getBoundingClientRect();
-      const center=innerHeight/2;
-      const offset=(rect.top+rect.height/2-center)*speed;
-      el.style.translate=`0 ${offset}px`;
-    });
-  }
-  window.addEventListener("scroll",parallax,{passive:true});
+  /* =========================================================
+     IMAGE FALLBACK
+     ========================================================= */
 
-  /* IMAGE FALLBACK */
-  document.querySelectorAll("img").forEach(img=>{
-    img.addEventListener("error",()=>{
-      img.style.display="none";
-      img.parentElement.classList.add("image-failed");
+  document.addEventListener(
+    "error",
+    (event) => {
+      const element = event.target;
+
+      if (
+        element &&
+        element.tagName === "IMG"
+      ) {
+        element.classList.add("image-failed");
+      }
+    },
+    true
+  );
+
+
+  /* =========================================================
+     SMOOTH HOVER FOR EXTERNAL LINKS
+     ========================================================= */
+
+  document.querySelectorAll(
+    "a[target='_blank']"
+  ).forEach((link) => {
+    link.addEventListener("click", () => {
+      link.classList.add("clicked");
+
+      setTimeout(() => {
+        link.classList.remove("clicked");
+      }, 300);
     });
   });
 
-  /* HOVER DEPTH */
-  document.addEventListener("pointermove",e=>{
-    const card=e.target.closest(".project-card__image,.client-feature__image");
-    if(!card || matchMedia("(hover:none)").matches) return;
 
-    const r=card.getBoundingClientRect();
-    const x=(e.clientX-r.left)/r.width*100;
-    const y=(e.clientY-r.top)/r.height*100;
-    card.style.setProperty("--mx",x+"%");
-    card.style.setProperty("--my",y+"%");
-  },{passive:true});
+  /* =========================================================
+     INITIALIZATION
+     ========================================================= */
 
-  /* ESC */
-  document.addEventListener("keydown",e=>{
-    if(e.key==="Escape") closeMenu();
+  safe(() => {
+    updateScrollProgress();
+    updateHeader();
+    initReveal();
+    initTilt();
+    initMagnetic();
   });
 
-  /* INITIAL */
+  /* САМОЕ ВАЖНОЕ — запускаем роутер */
   renderRoute();
-  initReveals();
-  initTilt();
-  initMagnetic();
 
-  window.addEventListener("load",()=>{
-    setTimeout(()=>{
-      initReveals();
-      initTilt();
-      initMagnetic();
-    },200);
-  });
 })();
