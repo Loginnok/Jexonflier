@@ -17,7 +17,7 @@
       category: "WEB / PREMIUM",
       description:
         "Премиальный landing page с акцентом на продукт, визуальную подачу и ощущение дорогого digital-бренда.",
-      image: "images/aurel.jpg",
+      image: "images/AUREL.png",
       type: "Landing page",
       field: "Premium product",
       url: "https://loginnok.github.io/xd/"
@@ -29,7 +29,7 @@
       category: "WEB / TRAVEL",
       description:
         "Сайт о Дагестане с визуальным акцентом на атмосферу места, путешествия и сильную подачу контента.",
-      image: "images/dagestan.jpg",
+      image: "images/DAGESTAN.jpg",
       type: "Website",
       field: "Travel / Destination",
       url: "https://clck.su/cQWrJ"
@@ -41,7 +41,7 @@
       category: "WEB / FASHION",
       description:
         "Минималистичный digital-концепт для fashion-проекта с фокусом на фотографии, продукт и премиальную эстетику.",
-      image: "images/leather.jpg",
+      image: "images/LEATHER.jpg",
       type: "Landing page",
       field: "Fashion / Product",
       url: "https://clck.su/yJCnE"
@@ -53,7 +53,7 @@
       category: "WEB / FITNESS",
       description:
         "Современный сайт для fitness-направления с акцентом на структуру, динамику и понятный пользовательский путь.",
-      image: "images/fitness.jpg",
+      image: "images/FITNESS.jpg",
       type: "Website",
       field: "Fitness / Digital product",
       url: "https://clck.su/VczEP"
@@ -65,7 +65,7 @@
       category: "WEB / WELLNESS",
       description:
         "Спокойный digital-концепт для психологического и wellness-проекта с чистой типографикой и мягкой визуальной системой.",
-      image: "images/mindflow.jpg",
+      image: "images/MINDFLOW.jpg",
       type: "Landing page",
       field: "Psychology / Wellness",
       url: "https://clck.su/lqjLB"
@@ -77,7 +77,7 @@
       category: "WEB / TRAVEL",
       description:
         "Туристический сайт с атмосферной визуальной подачей Карелии, природой и акцентом на впечатление от первого экрана.",
-      image: "images/karelia.jpg",
+      image: "images/KARELIA.png",
       type: "Website",
       field: "Travel / Tourism",
       url: "https://clck.su/KOHjF"
@@ -89,7 +89,7 @@
       category: "CLIENT / PSYCHOLOGY",
       description:
         "Реальный клиентский проект психолога. Сайт построен вокруг доверия, спокойной визуальной системы и понятного пути пользователя к записи.",
-      image: "images/psycholog_mam.jpg",
+      image: "images/PSYCHOLOG_MAM.jpg",
       type: "Client website",
       field: "Psychology",
       url: "https://психологдлямам.рф/"
