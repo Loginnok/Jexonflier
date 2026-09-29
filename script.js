@@ -1,16 +1,7 @@
 (() => {
-  "use strict";
-
-  /* =========================================================
-     JEXONFLIER — SCRIPT
-     Router + Projects + Animations + Mobile Menu
-     ========================================================= */
-
-  /* =========================================================
-     PROJECTS
-     ========================================================= */
-
-  const projects = {
+  
+  "use strict"
+    const projects = {
     aurel: {
       number: "01 / PROJECT",
       title: "Aurel",
@@ -96,12 +87,7 @@
       url: "https://психологдлямам.рф/"
     }
   };
-
-
-  /* =========================================================
-     DOM
-     ========================================================= */
-
+  
   const body = document.body;
 
   const loader = document.getElementById("loader");
@@ -116,11 +102,6 @@
 
   const pages = document.querySelectorAll(".page");
 
-
-  /* =========================================================
-     SAFETY
-     ========================================================= */
-
   function safe(fn) {
     try {
       fn();
@@ -128,11 +109,6 @@
       console.warn("JEXONFLIER:", error);
     }
   }
-
-
-  /* =========================================================
-     LOADER
-     ========================================================= */
 
   function hideLoader() {
     if (!loader) return;
@@ -168,14 +144,8 @@
   window.addEventListener("load", () => {
     setTimeout(hideLoader, 300);
   });
-
-  /* На случай ошибки любого другого JS */
+  
   setTimeout(hideLoader, 2500);
-
-
-  /* =========================================================
-     ROUTER
-     ========================================================= */
 
   const validPages = new Set([
     "home",
@@ -211,8 +181,7 @@
         page: "works"
       };
     }
-
-    /* обычные страницы */
+    
     if (validPages.has(hash)) {
       return {
         page: hash
@@ -223,12 +192,7 @@
       page: "home"
     };
   }
-
-
-  /* =========================================================
-     PROJECT DATA
-     ========================================================= */
-
+  
   function fillProject(slug) {
     const project = projects[slug];
 
@@ -292,18 +256,11 @@
     document.title = `${project.title} — JEXONFLIER`;
   }
 
-
-  /* =========================================================
-     PAGE ROUTING
-     ========================================================= */
-
   function renderRoute() {
     const route = getRoute();
-
-    /* закрываем мобильное меню */
+    
     closeMobileMenu();
-
-    /* показываем нужную страницу */
+    
     pages.forEach((page) => {
       const isActive =
         page.dataset.page === route.page;
@@ -317,33 +274,25 @@
     });
 
     body.dataset.page = route.page;
-
-    /* проект */
+    
     if (route.page === "project") {
       fillProject(route.slug);
     } else {
       document.title = "JEXONFLIER — Digital Design & Websites";
     }
-
-    /* наверх */
+    
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "auto"
     });
-
-    /* небольшая задержка для появления элементов */
+    
     setTimeout(() => {
       safe(initReveal);
       safe(initTilt);
       safe(initMagnetic);
     }, 50);
   }
-
-
-  /* =========================================================
-     NAVIGATION
-     ========================================================= */
 
   function navigate(hash) {
     if (!hash) {
@@ -354,7 +303,6 @@
       hash = `#${hash}`;
     }
 
-    /* неправильный проект */
     if (hash.startsWith("#project/")) {
       const slug = hash
         .replace("#project/", "")
@@ -367,23 +315,14 @@
       }
     }
 
-    /* тот же hash */
     if (window.location.hash === hash) {
       renderRoute();
       return;
     }
 
-    /* ВАЖНО:
-       Используем именно location.hash.
-       Это гарантированно вызывает hashchange.
     */
     window.location.hash = hash;
   }
-
-
-  /* =========================================================
-     HASH CHANGE
-     ========================================================= */
 
   window.addEventListener("hashchange", () => {
     renderRoute();
@@ -394,11 +333,6 @@
     renderRoute();
   });
 
-
-  /* =========================================================
-     INTERNAL LINKS
-     ========================================================= */
-
   document.addEventListener("click", (event) => {
     const link = event.target.closest("a");
 
@@ -408,21 +342,14 @@
 
     if (!href) return;
 
-    /* только внутренние hash-ссылки */
     if (!href.startsWith("#")) return;
 
-    /* пустая ссылка */
     if (href === "#") return;
 
     event.preventDefault();
 
     navigate(href);
   });
-
-
-  /* =========================================================
-     MOBILE MENU
-     ========================================================= */
 
   function openMobileMenu() {
     if (!mobileMenu) return;
@@ -462,21 +389,11 @@
     });
   }
 
-
-  /* =========================================================
-     ESCAPE
-     ========================================================= */
-
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeMobileMenu();
     }
   });
-
-
-  /* =========================================================
-     SCROLL PROGRESS
-     ========================================================= */
 
   function updateScrollProgress() {
     if (!progress) return;
@@ -520,11 +437,6 @@
     { passive: true }
   );
 
-
-  /* =========================================================
-     CURSOR GLOW
-     ========================================================= */
-
   if (cursor && window.matchMedia("(pointer: fine)").matches) {
     let mouseX = 0;
     let mouseY = 0;
@@ -554,11 +466,6 @@
     animateCursor();
   }
 
-
-  /* =========================================================
-     REVEAL ANIMATIONS
-     ========================================================= */
-
   let revealObserver = null;
 
 
@@ -570,7 +477,6 @@
 
     if (!elements.length) return;
 
-    /* если observer уже существует — не создаём новый */
     if (!revealObserver) {
       revealObserver = new IntersectionObserver(
         (entries) => {
@@ -592,11 +498,6 @@
       revealObserver.observe(element);
     });
   }
-
-
-  /* =========================================================
-     PROJECT CARD TILT
-     ========================================================= */
 
   function initTilt() {
     if (!window.matchMedia("(pointer: fine)").matches) {
@@ -647,11 +548,6 @@
     });
   }
 
-
-  /* =========================================================
-     MAGNETIC BUTTONS
-     ========================================================= */
-
   function initMagnetic() {
     if (!window.matchMedia("(pointer: fine)").matches) {
       return;
@@ -693,11 +589,6 @@
     });
   }
 
-
-  /* =========================================================
-     IMAGE FALLBACK
-     ========================================================= */
-
   document.addEventListener(
     "error",
     (event) => {
@@ -713,11 +604,6 @@
     true
   );
 
-
-  /* =========================================================
-     SMOOTH HOVER FOR EXTERNAL LINKS
-     ========================================================= */
-
   document.querySelectorAll(
     "a[target='_blank']"
   ).forEach((link) => {
@@ -730,11 +616,6 @@
     });
   });
 
-
-  /* =========================================================
-     INITIALIZATION
-     ========================================================= */
-
   safe(() => {
     updateScrollProgress();
     updateHeader();
@@ -743,7 +624,6 @@
     initMagnetic();
   });
 
-  /* САМОЕ ВАЖНОЕ — запускаем роутер */
   renderRoute();
 
 })();
