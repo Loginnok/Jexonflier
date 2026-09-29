@@ -89,17 +89,13 @@
   };
 
   const body = document.body;
-
   const loader = document.getElementById("loader");
   const loaderPercent = document.getElementById("loaderPercent");
-
   const header = document.getElementById("header");
   const progress = document.getElementById("scrollProgress");
   const cursor = document.getElementById("cursorGlow");
-
   const menuToggle = document.getElementById("menuToggle");
   const mobileMenu = document.getElementById("mobileMenu");
-
   const pages = document.querySelectorAll(".page");
 
   function safe(fn) {
@@ -117,6 +113,8 @@
 
     setTimeout(() => {
       loader.style.display = "none";
+      body.classList.remove("loading");
+      body.style.overflow = "";
     }, 700);
   }
 
@@ -211,32 +209,14 @@
     const image = document.getElementById("projectImage");
     const type = document.getElementById("projectType");
     const field = document.getElementById("projectField");
-
-    if (number) {
-      number.textContent = project.number;
-    }
-
-    if (category) {
-      category.textContent = project.category;
-    }
-
-    if (title) {
-      title.textContent = project.title;
-    }
-
-    if (description) {
-      description.textContent = project.description;
-    }
-
-    if (type) {
-      type.textContent = project.type;
-    }
-
-    if (field) {
-      field.textContent = project.field;
-    }
-
     const availability = document.getElementById("projectAvailability");
+
+    if (number) number.textContent = project.number;
+    if (category) category.textContent = project.category;
+    if (title) title.textContent = project.title;
+    if (description) description.textContent = project.description;
+    if (type) type.textContent = project.type;
+    if (field) field.textContent = project.field;
 
     if (availability) {
       availability.hidden = !project.unavailable;
@@ -262,6 +242,30 @@
     document.title = `${project.title} — JEXONFLIER`;
   }
 
+  function openMobileMenu() {
+    if (!mobileMenu) return;
+
+    mobileMenu.classList.add("active");
+    body.classList.add("menu-open");
+
+    if (menuToggle) {
+      menuToggle.classList.add("active");
+      menuToggle.setAttribute("aria-expanded", "true");
+    }
+  }
+
+  function closeMobileMenu() {
+    if (!mobileMenu) return;
+
+    mobileMenu.classList.remove("active");
+    body.classList.remove("menu-open");
+
+    if (menuToggle) {
+      menuToggle.classList.remove("active");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+  }
+
   function renderRoute() {
     const route = getRoute();
 
@@ -272,10 +276,7 @@
 
       page.classList.toggle("active", isActive);
       page.hidden = !isActive;
-      page.setAttribute(
-        "aria-hidden",
-        isActive ? "false" : "true"
-      );
+      page.setAttribute("aria-hidden", isActive ? "false" : "true");
     });
 
     body.dataset.page = route.page;
@@ -328,13 +329,8 @@
     window.location.hash = hash;
   }
 
-  window.addEventListener("hashchange", () => {
-    renderRoute();
-  });
-
-  window.addEventListener("popstate", () => {
-    renderRoute();
-  });
+  window.addEventListener("hashchange", renderRoute);
+  window.addEventListener("popstate", renderRoute);
 
   document.addEventListener("click", (event) => {
     const link = event.target.closest("a");
@@ -351,30 +347,6 @@
 
     navigate(href);
   });
-
-  function openMobileMenu() {
-    if (!mobileMenu) return;
-
-    mobileMenu.classList.add("active");
-    body.classList.add("menu-open");
-
-    if (menuToggle) {
-      menuToggle.classList.add("active");
-      menuToggle.setAttribute("aria-expanded", "true");
-    }
-  }
-
-  function closeMobileMenu() {
-    if (!mobileMenu) return;
-
-    mobileMenu.classList.remove("active");
-    body.classList.remove("menu-open");
-
-    if (menuToggle) {
-      menuToggle.classList.remove("active");
-      menuToggle.setAttribute("aria-expanded", "false");
-    }
-  }
 
   if (menuToggle) {
     menuToggle.addEventListener("click", (event) => {
@@ -446,7 +418,6 @@
   ) {
     let mouseX = 0;
     let mouseY = 0;
-
     let currentX = 0;
     let currentY = 0;
 
@@ -481,6 +452,15 @@
 
     if (!elements.length) return;
 
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((element) => {
+        element.classList.add("visible");
+        element.classList.add("revealed");
+      });
+
+      return;
+    }
+
     if (!revealObserver) {
       revealObserver = new IntersectionObserver(
         (entries) => {
@@ -504,9 +484,7 @@
   }
 
   function initTilt() {
-    if (
-      !window.matchMedia("(pointer: fine)").matches
-    ) {
+    if (!window.matchMedia("(pointer: fine)").matches) {
       return;
     }
 
@@ -530,6 +508,8 @@
         const centerX = rect.width / 2;
         const centerY = rect.height / 2;
 
+        if (!centerX || !centerY) return;
+
         const rotateX =
           ((y - centerY) / centerY) * -3;
 
@@ -537,10 +517,7 @@
           ((x - centerX) / centerX) * 3;
 
         card.style.transform =
-          `perspective(900px)
-           rotateX(${rotateX}deg)
-           rotateY(${rotateY}deg)
-           translateY(-4px)`;
+          `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
       });
 
       card.addEventListener("mouseleave", () => {
@@ -550,9 +527,7 @@
   }
 
   function initMagnetic() {
-    if (
-      !window.matchMedia("(pointer: fine)").matches
-    ) {
+    if (!window.matchMedia("(pointer: fine)").matches) {
       return;
     }
 
@@ -561,41 +536,32 @@
     );
 
     elements.forEach((element) => {
-      if (
-        element.dataset.magneticReady === "true"
-      ) {
+      if (element.dataset.magneticReady === "true") {
         return;
       }
 
       element.dataset.magneticReady = "true";
 
-      element.addEventListener(
-        "mousemove",
-        (event) => {
-          const rect =
-            element.getBoundingClientRect();
+      element.addEventListener("mousemove", (event) => {
+        const rect = element.getBoundingClientRect();
 
-          const x =
-            event.clientX -
-            rect.left -
-            rect.width / 2;
+        const x =
+          event.clientX -
+          rect.left -
+          rect.width / 2;
 
-          const y =
-            event.clientY -
-            rect.top -
-            rect.height / 2;
+        const y =
+          event.clientY -
+          rect.top -
+          rect.height / 2;
 
-          element.style.transform =
-            `translate(${x * 0.12}px, ${y * 0.12}px)`;
-        }
-      );
+        element.style.transform =
+          `translate(${x * 0.12}px, ${y * 0.12}px)`;
+      });
 
-      element.addEventListener(
-        "mouseleave",
-        () => {
-          element.style.transform = "";
-        }
-      );
+      element.addEventListener("mouseleave", () => {
+        element.style.transform = "";
+      });
     });
   }
 
@@ -614,25 +580,29 @@
     true
   );
 
-  document.querySelectorAll(
-    "a[target='_blank']"
-  ).forEach((link) => {
-    link.addEventListener("click", () => {
-      link.classList.add("clicked");
+  document
+    .querySelectorAll("a[target='_blank']")
+    .forEach((link) => {
+      link.addEventListener("click", () => {
+        link.classList.add("clicked");
 
-      setTimeout(() => {
-        link.classList.remove("clicked");
-      }, 300);
+        setTimeout(() => {
+          link.classList.remove("clicked");
+        }, 300);
+      });
     });
-  });
 
   safe(() => {
     updateScrollProgress();
     updateHeader();
+    renderRoute();
     initReveal();
     initTilt();
     initMagnetic();
   });
 
-  renderRoute();
+  window.addEventListener("DOMContentLoaded", () => {
+    safe(renderRoute);
+    safe(initReveal);
+  });
 })();
