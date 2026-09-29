@@ -1,7 +1,7 @@
 (() => {
-  
-  "use strict"
-    const projects = {
+  "use strict";
+
+  const projects = {
     aurel: {
       number: "01 / PROJECT",
       title: "Aurel",
@@ -87,7 +87,7 @@
       url: "https://психологдлямам.рф/"
     }
   };
-  
+
   const body = document.body;
 
   const loader = document.getElementById("loader");
@@ -132,8 +132,12 @@
 
     if (loaderPercent) {
       loaderPercent.textContent = `${loaderValue}%`;
+
       const bar = document.querySelector(".loader__line span");
-      if (bar) bar.style.width = `${loaderValue}%`;
+
+      if (bar) {
+        bar.style.width = `${loaderValue}%`;
+      }
     }
 
     if (loaderValue >= 100) {
@@ -144,7 +148,7 @@
   window.addEventListener("load", () => {
     setTimeout(hideLoader, 300);
   });
-  
+
   setTimeout(hideLoader, 2500);
 
   const validPages = new Set([
@@ -156,13 +160,11 @@
     "project"
   ]);
 
-
   function getRoute() {
     let hash = window.location.hash || "#home";
 
     hash = decodeURIComponent(hash.replace(/^#/, ""));
 
-    /* project/aurel */
     if (hash.startsWith("project/")) {
       const slug = hash
         .replace("project/", "")
@@ -181,7 +183,7 @@
         page: "works"
       };
     }
-    
+
     if (validPages.has(hash)) {
       return {
         page: hash
@@ -192,7 +194,7 @@
       page: "home"
     };
   }
-  
+
   function fillProject(slug) {
     const project = projects[slug];
 
@@ -235,7 +237,11 @@
     }
 
     const availability = document.getElementById("projectAvailability");
-    if (availability) availability.hidden = !project.unavailable;
+
+    if (availability) {
+      availability.hidden = !project.unavailable;
+    }
+
     if (live) {
       live.hidden = !!project.unavailable;
       live.href = project.url;
@@ -258,12 +264,11 @@
 
   function renderRoute() {
     const route = getRoute();
-    
+
     closeMobileMenu();
-    
+
     pages.forEach((page) => {
-      const isActive =
-        page.dataset.page === route.page;
+      const isActive = page.dataset.page === route.page;
 
       page.classList.toggle("active", isActive);
       page.hidden = !isActive;
@@ -274,19 +279,19 @@
     });
 
     body.dataset.page = route.page;
-    
+
     if (route.page === "project") {
       fillProject(route.slug);
     } else {
       document.title = "JEXONFLIER — Digital Design & Websites";
     }
-    
+
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "auto"
     });
-    
+
     setTimeout(() => {
       safe(initReveal);
       safe(initTilt);
@@ -320,14 +325,12 @@
       return;
     }
 
-    */
     window.location.hash = hash;
   }
 
   window.addEventListener("hashchange", () => {
     renderRoute();
   });
-
 
   window.addEventListener("popstate", () => {
     renderRoute();
@@ -341,9 +344,7 @@
     const href = link.getAttribute("href");
 
     if (!href) return;
-
     if (!href.startsWith("#")) return;
-
     if (href === "#") return;
 
     event.preventDefault();
@@ -363,7 +364,6 @@
     }
   }
 
-
   function closeMobileMenu() {
     if (!mobileMenu) return;
 
@@ -376,12 +376,14 @@
     }
   }
 
-
   if (menuToggle) {
     menuToggle.addEventListener("click", (event) => {
       event.preventDefault();
 
-      if (mobileMenu && mobileMenu.classList.contains("active")) {
+      if (
+        mobileMenu &&
+        mobileMenu.classList.contains("active")
+      ) {
         closeMobileMenu();
       } else {
         openMobileMenu();
@@ -399,7 +401,8 @@
     if (!progress) return;
 
     const scrollTop =
-      window.scrollY || document.documentElement.scrollTop;
+      window.scrollY ||
+      document.documentElement.scrollTop;
 
     const height =
       document.documentElement.scrollHeight -
@@ -410,12 +413,13 @@
       return;
     }
 
-    const percent =
-      Math.min(100, Math.max(0, (scrollTop / height) * 100));
+    const percent = Math.min(
+      100,
+      Math.max(0, (scrollTop / height) * 100)
+    );
 
     progress.style.width = `${percent}%`;
   }
-
 
   function updateHeader() {
     if (!header) return;
@@ -427,7 +431,6 @@
     }
   }
 
-
   window.addEventListener(
     "scroll",
     () => {
@@ -437,7 +440,10 @@
     { passive: true }
   );
 
-  if (cursor && window.matchMedia("(pointer: fine)").matches) {
+  if (
+    cursor &&
+    window.matchMedia("(pointer: fine)").matches
+  ) {
     let mouseX = 0;
     let mouseY = 0;
 
@@ -468,12 +474,10 @@
 
   let revealObserver = null;
 
-
   function initReveal() {
-    const elements =
-      document.querySelectorAll(
-        ".reveal, .fade-up, [data-reveal]"
-      );
+    const elements = document.querySelectorAll(
+      ".reveal, .fade-up, [data-reveal]"
+    );
 
     if (!elements.length) return;
 
@@ -500,34 +504,31 @@
   }
 
   function initTilt() {
-    if (!window.matchMedia("(pointer: fine)").matches) {
+    if (
+      !window.matchMedia("(pointer: fine)").matches
+    ) {
       return;
     }
 
-    const cards =
-      document.querySelectorAll(
-        ".project-card, .work-card, [data-tilt]"
-      );
+    const cards = document.querySelectorAll(
+      ".project-card, .work-card, [data-tilt]"
+    );
 
     cards.forEach((card) => {
-      if (card.dataset.tiltReady === "true") return;
+      if (card.dataset.tiltReady === "true") {
+        return;
+      }
 
       card.dataset.tiltReady = "true";
 
       card.addEventListener("mousemove", (event) => {
         const rect = card.getBoundingClientRect();
 
-        const x =
-          event.clientX - rect.left;
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
 
-        const y =
-          event.clientY - rect.top;
-
-        const centerX =
-          rect.width / 2;
-
-        const centerY =
-          rect.height / 2;
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
 
         const rotateX =
           ((y - centerY) / centerY) * -3;
@@ -549,43 +550,52 @@
   }
 
   function initMagnetic() {
-    if (!window.matchMedia("(pointer: fine)").matches) {
+    if (
+      !window.matchMedia("(pointer: fine)").matches
+    ) {
       return;
     }
 
-    const elements =
-      document.querySelectorAll(
-        ".btn, .button, .magnetic, [data-magnetic]"
-      );
+    const elements = document.querySelectorAll(
+      ".btn, .button, .magnetic, [data-magnetic]"
+    );
 
     elements.forEach((element) => {
-      if (element.dataset.magneticReady === "true") {
+      if (
+        element.dataset.magneticReady === "true"
+      ) {
         return;
       }
 
       element.dataset.magneticReady = "true";
 
-      element.addEventListener("mousemove", (event) => {
-        const rect =
-          element.getBoundingClientRect();
+      element.addEventListener(
+        "mousemove",
+        (event) => {
+          const rect =
+            element.getBoundingClientRect();
 
-        const x =
-          event.clientX -
-          rect.left -
-          rect.width / 2;
+          const x =
+            event.clientX -
+            rect.left -
+            rect.width / 2;
 
-        const y =
-          event.clientY -
-          rect.top -
-          rect.height / 2;
+          const y =
+            event.clientY -
+            rect.top -
+            rect.height / 2;
 
-        element.style.transform =
-          `translate(${x * 0.12}px, ${y * 0.12}px)`;
-      });
+          element.style.transform =
+            `translate(${x * 0.12}px, ${y * 0.12}px)`;
+        }
+      );
 
-      element.addEventListener("mouseleave", () => {
-        element.style.transform = "";
-      });
+      element.addEventListener(
+        "mouseleave",
+        () => {
+          element.style.transform = "";
+        }
+      );
     });
   }
 
@@ -625,5 +635,4 @@
   });
 
   renderRoute();
-
 })();
