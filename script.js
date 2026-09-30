@@ -2,6 +2,18 @@
   "use strict";
 
   const projects = {
+    vyra: {
+      number: "08 / PROJECT",
+      title: "VYRA",
+      category: "WEB / TRAVEL / MOTION",
+      description:
+        "Интерактивный концепт сервиса авиабилетов. Кинематографичный первый экран, анимации, подбор демонстрационных рейсов, выбор рейса и сохранение маршрутов. Дизайн и разработка; без продажи реальных билетов.",
+      image: "images/VYRA.svg",
+      type: "Interactive website / Concept",
+      field: "Travel / Airline tickets",
+      url: "./vyra/"
+    },
+
     aurel: {
       number: "01 / PROJECT",
       title: "Aurel",

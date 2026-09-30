@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5f6f3">
+  <meta name="description" content="VYRA — дальше привычного. Дизайн-концепт сервиса авиабилетов: найдите свой маршрут, выберите рейс и сохраните следующую поездку.">
+  <meta property="og:title" content="VYRA — дальше привычного">
+  <meta property="og:description" content="Большой мир. Ближе, чем кажется. Концепт сервиса авиабилетов от Jexonflier.">
+  <meta property="og:image" content="https://jexonflier.ru/vyra/assets/hero.jpg">
+  <title>VYRA — дальше привычного</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/hero.jpg">
+  <link rel="stylesheet" href="style.css?v=1">
+  <script src="app.js?v=1" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#search">Перейти к поиску</a>
+  <svg class="icon-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7"/></symbol>
+    <symbol id="i-north" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="m21 3-7 18-3-8-8-3L21 3ZM11 13 21 3"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+    <symbol id="i-swap" viewBox="0 0 24 24"><path d="M4 8h16m-4-4 4 4-4 4M20 16H4m4 4-4-4 4-4"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><rect x="5" y="6" width="14" height="15" rx="3"/><path d="M9 6V3h6v3M9 10v7m6-7v7"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="m12 2 2.6 7.4L22 12l-7.4 2.6L12 22l-2.6-7.4L2 12l7.4-2.6L12 2Z"/></symbol>
+  </defs></svg>
+  <header class="header">
+    <a class="brand" href="#" aria-label="VYRA — на главную"><span class="brand-symbol">↗</span> VYRA<span class="brand-dot">®</span></a>
+    <nav class="nav" aria-label="Главная навигация"><a class="nav-active" href="#search">Авиабилеты</a><a href="#destinations">Куда полететь</a><a href="#why">О VYRA</a></nav>
+    <div class="header-actions"><button class="favorites-button" id="favoritesButton" aria-label="Показать избранные направления"><svg><use href="#i-heart"/></svg><span id="favoritesCount" hidden>0</span></button><button class="trips-button" id="tripsButton">Мои поездки <svg><use href="#i-north"/></svg></button></div>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-image" id="heroImage"><img src="assets/hero.jpg" alt="Пассажирский самолёт над облаками и океаном в солнечном небе" width="1672" height="941" fetchpriority="high"></div>
+      <div class="hero-shade"></div><div class="hero-grain"></div>
+      <div class="hero-content"><p class="hero-eyebrow"><span class="status-dot"></span> ДАЛЬШЕ ПРИВЫЧНОГО</p>
+        <h1 id="heroTitle"><span><i>Большой мир.</i></span><span><i>Ближе, чем</i></span><span><i>кажется.</i></span></h1>
+        <p class="hero-copy">Оставьте привычное за облаками.<br>Мы поможем найти ваш следующий маршрут.</p>
+        <a href="#destinations" class="hero-link">Найти вдохновение <span><svg><use href="#i-arrow"/></svg></span></a>
+      </div>
+      <div class="hero-flight" aria-hidden="true"><span class="flight-dot"></span><div><b>Где-то начинается ваша история</b><small>ВЫСОТА 10 600 М · СВОБОДА БЕЗ ГРАНИЦ</small></div></div>
+      <span class="hero-index" aria-hidden="true">01 / THE WORLD IS YOURS</span>
+    </section>
+
+    <section class="search-section wrap" id="search" aria-label="Поиск авиабилетов">
+      <div class="search-box">
+        <div class="search-top"><div class="trip-tabs" role="group" aria-label="Тип поездки"><button type="button" class="active" data-trip="round" aria-pressed="true">Туда и обратно</button><button type="button" data-trip="oneway" aria-pressed="false">В одну сторону</button></div><span class="search-note"><svg><use href="#i-spark"/></svg> Каждое путешествие начинается здесь</span></div>
+        <form id="flightForm">
+          <div class="search-fields">
+            <label class="search-field city-field"><span>Откуда</span><span class="city-input"><input id="origin" name="origin" list="airports" value="Москва" autocomplete="off" required aria-label="Город вылета"><b id="originCode">MOW</b></span></label>
+            <button class="swap-button" type="button" id="swapButton" aria-label="Поменять города местами"><svg><use href="#i-swap"/></svg></button>
+            <label class="search-field city-field"><span>Куда</span><span class="city-input"><input id="destination" name="destination" list="airports" value="Стамбул" autocomplete="off" required aria-label="Город прилёта"><b id="destinationCode">IST</b></span></label>
+            <div class="search-field dates-field"><label><span>Туда</span><input type="date" id="departDate" required aria-label="Дата вылета"></label><span class="date-divider">—</span><label id="returnField"><span>Обратно</span><input type="date" id="returnDate" required aria-label="Дата возвращения"></label></div>
+            <label class="search-field passengers-field"><span>Кто летит</span><select id="passengers" aria-label="Количество пассажиров"><option value="1">1 пассажир</option><option value="2">2 пассажира</option><option value="3">3 пассажира</option><option value="4">4 пассажира</option><option value="5">5 пассажиров</option><option value="6">6 пассажиров</option></select><select id="cabin" aria-label="Класс обслуживания"><option value="economy">Эконом</option><option value="business">Бизнес</option></select></label>
+            <button class="search-submit" type="submit" id="searchButton"><span>Найти билеты</span><svg><use href="#i-arrow"/></svg></button>
+          </div>
+          <datalist id="airports"><option value="Москва">MOW</option><option value="Санкт-Петербург">LED</option><option value="Стамбул">IST</option><option value="Бали">DPS</option><option value="Дубай">DXB</option><option value="Рим">FCO</option><option value="Сочи">AER</option><option value="Тбилиси">TBS</option><option value="Париж">PAR</option><option value="Токио">TYO</option><option value="Бангкок">BKK</option><option value="Казань">KZN</option></datalist>
+          <p class="form-error" id="searchError" role="alert" hidden></p>
+        </form>
+        <div class="search-bottom"><span>Маленькая подсказка:</span><button type="button" data-quick="AER">К морю в Сочи ↗</button><button type="button" data-quick="IST">За кофе в Стамбул ↗</button><span class="demo-label">Демо · без покупки билетов</span></div>
+      </div>
+    </section>
+
+    <section class="results wrap" id="results" aria-labelledby="resultsTitle" hidden>
+      <div class="section-heading"><div><p class="eyebrow">ВАШ МАРШРУТ</p><h2 id="resultsTitle">Выбирайте свой рейс</h2><p class="results-subtitle" id="resultsSubtitle"></p></div><button class="text-button" id="closeResults">Закрыть результаты <svg><use href="#i-close"/></svg></button></div>
+      <div class="results-toolbar"><div><label class="filter-check"><input type="checkbox" id="directOnly"> Без пересадок</label><label class="filter-check"><input type="checkbox" id="baggageOnly"> С багажом</label></div><label class="sort-label">Сначала <select id="sortFlights"><option value="price">дешевле</option><option value="duration">быстрее</option></select></label></div>
+      <p class="demo-info">Демонстрационные рейсы и цены. Это интерактивный концепт, билеты не оформляются.</p>
+      <div id="flightResults" class="flight-results" aria-live="polite"></div>
+    </section>
+
+    <section class="destinations wrap section-space" id="destinations" aria-labelledby="destinationsTitle">
+      <div class="section-heading reveal"><div><p class="eyebrow"><span class="tiny-square"></span> КУДА ДАЛЬШЕ?</p><h2 id="destinationsTitle">Новые места.<br><span class="muted-heading">Новые вы.</span></h2></div><div class="heading-side"><p>У каждого города — свой характер.<br>Осталось найти тот, что совпадёт с вашим.</p><div class="destination-tabs" role="group" aria-label="Тип направления"><button class="active" data-category="all" aria-pressed="true">Все</button><button data-category="sea" aria-pressed="false">К морю</button><button data-category="city" aria-pressed="false">В город</button></div></div></div>
+      <div class="destination-grid" id="destinationGrid">
+        <article class="destination-card reveal" data-code="IST" data-category="city"><div class="destination-photo"><img src="assets/istanbul.jpg" alt="Мечеть и панорама Стамбула" loading="lazy" width="800" height="1000"><span class="destination-tag">Два континента. Одна история.</span><button class="heart-button" data-favorite="IST" aria-label="Добавить Стамбул в избранное" aria-pressed="false"><svg><use href="#i-heart"/></svg></button><span class="destination-code" aria-hidden="true">IST</span><div class="destination-overlay"><div><span>ТУРЦИЯ</span><h3>Стамбул</h3></div><button class="circle-button" data-explore="IST" aria-label="Посмотреть билеты в Стамбул"><svg><use href="#i-north"/></svg></button></div></div><div class="destination-meta"><span>Из Москвы · в одну сторону</span><button data-explore="IST">от 12 900 ₽ <svg><use href="#i-arrow"/></svg></button></div></article>
+        <article class="destination-card reveal" data-code="DPS" data-category="sea"><div class="destination-photo"><img src="assets/bali.jpg" alt="Тропический храм среди зелени на Бали" loading="lazy" width="800" height="1000"><span class="destination-tag">В режиме «никуда не спешить»</span><button class="heart-button" data-favorite="DPS" aria-label="Добавить Бали в избранное" aria-pressed="false"><svg><use href="#i-heart"/></svg></button><span class="destination-code" aria-hidden="true">DPS</span><div class="destination-overlay"><div><span>ИНДОНЕЗИЯ</span><h3>Бали</h3></div><button class="circle-button" data-explore="DPS" aria-label="Посмотреть билеты на Бали"><svg><use href="#i-north"/></svg></button></div></div><div class="destination-meta"><span>Из Москвы · в одну сторону</span><button data-explore="DPS">от 48 900 ₽ <svg><use href="#i-arrow"/></svg></button></div></article>
+        <article class="destination-card reveal" data-code="DXB" data-category="sea"><div class="destination-photo"><img src="assets/dubai.jpg" alt="Небоскрёбы Дубая в вечернем свете" loading="lazy" width="800" height="1000"><span class="destination-tag">Город, который смотрит вверх</span><button class="heart-button" data-favorite="DXB" aria-label="Добавить Дубай в избранное" aria-pressed="false"><svg><use href="#i-heart"/></svg></button><span class="destination-code" aria-hidden="true">DXB</span><div class="destination-overlay"><div><span>ОАЭ</span><h3>Дубай</h3></div><button class="circle-button" data-explore="DXB" aria-label="Посмотреть билеты в Дубай"><svg><use href="#i-north"/></svg></button></div></div><div class="destination-meta"><span>Из Москвы · в одну сторону</span><button data-explore="DXB">от 24 900 ₽ <svg><use href="#i-arrow"/></svg></button></div></article>
+        <article class="destination-card reveal" data-code="FCO" data-category="city"><div class="destination-photo"><img src="assets/rome.jpg" alt="Колизей и улицы Рима" loading="lazy" width="800" height="1000"><span class="destination-tag">Немного dolce vita</span><button class="heart-button" data-favorite="FCO" aria-label="Добавить Рим в избранное" aria-pressed="false"><svg><use href="#i-heart"/></svg></button><span class="destination-code" aria-hidden="true">FCO</span><div class="destination-overlay"><div><span>ИТАЛИЯ</span><h3>Рим</h3></div><button class="circle-button" data-explore="FCO" aria-label="Посмотреть билеты в Рим"><svg><use href="#i-north"/></svg></button></div></div><div class="destination-meta"><span>Из Москвы · в одну сторону</span><button data-explore="FCO">от 28 900 ₽ <svg><use href="#i-arrow"/></svg></button></div></article>
+      </div><p class="empty-favorites" id="emptyFavorites" hidden>Здесь будут ваши любимые направления. Нажмите на сердечко на карточке города.</p><p class="price-note">Цены приведены для демонстрации интерфейса и не являются предложением о продаже.</p>
+    </section>
+
+    <section class="airline-strip" aria-label="Вдохновение для следующей поездки"><div class="ticker-track" aria-hidden="true"><span>MOW <i>↗</i> IST</span><b>MAKE ROOM FOR MEMORIES</b><span>DXB <i>↗</i> DPS</span><b>ДАЛЬШЕ ПРИВЫЧНОГО</b><span>FCO <i>↗</i> PAR</span><b>THE WORLD IS YOURS</b><span>MOW <i>↗</i> IST</span><b>MAKE ROOM FOR MEMORIES</b><span>DXB <i>↗</i> DPS</span><b>ДАЛЬШЕ ПРИВЫЧНОГО</b><span>FCO <i>↗</i> PAR</span><b>THE WORLD IS YOURS</b></div></section>
+
+    <section class="experience section-space" id="why" aria-labelledby="experienceTitle"><div class="wrap experience-grid">
+      <div class="experience-copy reveal"><p class="eyebrow"><span class="tiny-square"></span> МЕНЬШЕ ХЛОПОТ. БОЛЬШЕ МИРА.</p><h2 id="experienceTitle">Путешествие<br>начинается<br><em>с лёгкости.</em></h2><p>Чтобы вы думали о первом утре в новом городе.<br>А не о десятке открытых вкладок.</p><a class="button light-button" href="#search">Выбрать свой маршрут <svg><use href="#i-north"/></svg></a></div>
+      <div class="ticket-scene reveal"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><span class="orbit-label">NEXT STOP: SOMETHING NEW</span><div class="boarding-pass" id="boardingPass"><div class="pass-head"><span class="pass-brand">↗ VYRA</span><span>BOARDING PASS <i>DEMO</i></span></div><div class="pass-route"><div><small>МОСКВА</small><strong>MOW</strong></div><svg class="pass-plane"><use href="#i-plane"/></svg><div><small>СТАМБУЛ</small><strong>IST</strong></div></div><div class="pass-dotted"><span></span><i>YOUR NEXT CHAPTER</i><span></span></div><div class="pass-details"><div><small>ПАССАЖИР</small><b>ИСКАТЕЛЬ ВПЕЧАТЛЕНИЙ</b></div><div><small>МЕСТО</small><b>12A <span>у окна</span></b></div></div><div class="pass-perforation"></div><div class="pass-bottom"><div><small>ВАШ СЛЕДУЮЩИЙ ШАГ</small><b>Полететь навстречу новому.</b></div><div class="barcode" aria-hidden="true"></div></div></div><span class="ticket-caption"><svg><use href="#i-spark"/></svg> Коллекционируйте впечатления, не вещи.</span></div>
+    </div></section>
+
+    <section class="features wrap section-space" aria-label="Возможности сервиса"><div class="feature reveal"><span class="feature-number">01 /</span><svg><use href="#i-spark"/></svg><h3>Ваш ритм. Ваш рейс.</h3><p>Утренний вылет или короткая пересадка? Сравните варианты и выберите то, что подходит именно вам.</p></div><div class="feature reveal"><span class="feature-number">02 /</span><svg><use href="#i-bag"/></svg><h3>Всё понятно до вылета.</h3><p>Ручная кладь, багаж, стоимость на всех пассажиров — детали тарифа всегда перед глазами.</p></div><div class="feature reveal"><span class="feature-number">03 /</span><svg><use href="#i-heart"/></svg><h3>Планы остаются с вами.</h3><p>Сохраняйте направления и выбранные маршруты в этом браузере. Вернуться к мечте — один клик.</p></div></section>
+
+    <section class="faq wrap section-space" id="faq"><div class="faq-title reveal"><p class="eyebrow">ПЕРЕД ВЗЛЁТОМ</p><h2>Есть вопросы?<br><span class="muted-heading">Всё расскажем.</span></h2><p>Пара деталей, чтобы вам было спокойнее.</p></div><div class="faq-list reveal"><details><summary>Можно ли купить настоящий билет?<span>+</span></summary><p>VYRA — интерактивный дизайн-концепт для портфолио Jexonflier. Здесь можно подобрать демонстрационный рейс и сохранить маршрут. Продажа билетов, оплата и подключение к системам авиакомпаний не выполняются.</p></details><details><summary>Что входит в указанную стоимость?<span>+</span></summary><p>В результатах показана демонстрационная цена за всех выбранных пассажиров. Для поездки туда и обратно учитываются оба направления. Состав багажа и окончательная сумма отображаются при выборе тарифа.</p></details><details><summary>Где хранятся мои поездки?<span>+</span></summary><p>Избранные города и сохранённые маршруты остаются в локальном хранилище вашего браузера. Регистрация и персональные данные не нужны. При очистке данных браузера сохранённые планы исчезнут.</p></details><details><summary>Как выбрать другой город или дату?<span>+</span></summary><p>Введите город в поле поиска и выберите его из подсказок. Можно поменять города местами, выбрать даты, количество пассажиров и класс. После изменения параметров нажмите «Найти билеты» ещё раз.</p></details></div></section>
+
+    <section class="final-cta wrap reveal"><div><p class="eyebrow">ВАШЕ МЕСТО У ОКНА ЖДЁТ</p><h2>Следующая история —<br><em>на расстоянии полёта.</em></h2></div><a href="#search" class="cta-circle" aria-label="Перейти к поиску билетов"><svg><use href="#i-north"/></svg><span>ПОЛЕТЕЛИ</span></a><div class="cta-rings" aria-hidden="true"></div></section>
+  </main>
+  <footer class="footer wrap"><div class="footer-top"><a class="brand" href="#"><span class="brand-symbol">↗</span> VYRA<span class="brand-dot">®</span></a><p>Большой мир. Ближе, чем кажется.</p><a href="../#project/vyra" class="portfolio-link">Дизайн и разработка — Jexonflier <svg><use href="#i-north"/></svg></a></div><div class="footer-bottom"><span>© <span id="year">2026</span> VYRA · Концепт сервиса авиабилетов</span><a href="#faq">О демонстрационном проекте</a><button id="motionToggle" aria-pressed="true">Анимации: вкл <span>↻</span></button></div></footer>
+  <dialog id="bookingDialog" class="booking-dialog" aria-labelledby="bookingTitle"><button class="dialog-close" data-close="bookingDialog" aria-label="Закрыть детали рейса"><svg><use href="#i-close"/></svg></button><div id="bookingContent"></div></dialog>
+  <dialog id="tripsDialog" class="trips-dialog" aria-labelledby="tripsTitle"><button class="dialog-close" data-close="tripsDialog" aria-label="Закрыть мои поездки"><svg><use href="#i-close"/></svg></button><p class="eyebrow">ПЛАНЫ НА НОВЫЕ ВПЕЧАТЛЕНИЯ</p><h2 id="tripsTitle">Мои поездки</h2><div id="savedTrips"></div><p class="dialog-footnote">Сохранено только в этом браузере. Это планы поездок, не билеты.</p></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript">Для поиска демонстрационных рейсов включите JavaScript. Описание проекта и направления доступны без него.</p></noscript>
+</body>
+</html>
