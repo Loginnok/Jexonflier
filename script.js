@@ -345,7 +345,16 @@
         preview.width = item.width;
         preview.height = item.height;
         const caption = document.createElement("figcaption");
-        caption.textContent = `${item.caption} · открыть целиком ↗`;
+        caption.textContent = `${item.caption} · открыть целиком `;
+        const arrow = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        arrow.setAttribute("class", "portfolio-arrow");
+        arrow.setAttribute("viewBox", "0 0 24 24");
+        arrow.setAttribute("aria-hidden", "true");
+        arrow.setAttribute("focusable", "false");
+        const arrowPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        arrowPath.setAttribute("d", "M7 17 17 7M7 7h10v10");
+        arrow.appendChild(arrowPath);
+        caption.appendChild(arrow);
         link.append(preview);
         figure.append(heading, link, caption);
         gallery.append(figure);

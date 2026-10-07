@@ -392,3 +392,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--lime);outline-offse
 .case-gallery--product .case-visual__frame{background:#0b110e;scrollbar-color:#527563 #0b110e}
 @media(max-width:800px){.case-gallery{grid-template-columns:1fr}.case-visual--wide,.case-visual--components{grid-column:auto}.case-visual__frame{height:520px}.case-visual--components .case-visual__frame{padding:12px}}
 
+
+.portfolio-arrow{flex-shrink:0;pointer-events:none;vertical-align:middle}
+.project-card__open .portfolio-arrow{width:22px;height:22px}
+.service-row__icon .portfolio-arrow,.service-detail__head .portfolio-arrow{width:28px;height:28px}
+.back-link{align-items:center}
+.next-project strong .portfolio-arrow{width:24px;height:24px;margin-left:8px}
+.case-visual figcaption .portfolio-arrow{width:14px;height:14px}
