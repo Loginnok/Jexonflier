@@ -2,6 +2,77 @@
   "use strict";
 
   const projects = {
+    tarifno: {
+      number: "10 / DESIGN CASE",
+      title: "Тарифно",
+      category: "DESIGN / BANKING / TEST ASSIGNMENT",
+      description:
+        "Банковский landing о сравнении условий обслуживания бизнеса. Дизайн-кейс по тестовому заданию Junior Web Designer: desktop, мобильная версия и повторно используемые компоненты в Figma. Светлая и тёмная зелёная палитра, акцентный CTA и последовательная подача услуги.",
+      image: "images/BANK-DESKTOP.png",
+      visualTheme: "design",
+      type: "Design case / Test assignment",
+      field: "Banking / Business services",
+      role: "UI design / Responsive design",
+      tools: "Figma / Auto Layout / Components",
+      url: "https://www.figma.com/design/zcbeuVPFdfLq5jUfQTI15P/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5?node-id=1-306",
+      linkLabel: "Открыть исходный Figma",
+      details: [
+        {
+          title: "Задача",
+          text: "Создать понятный лендинг услуги сравнения банковских тарифов для бизнеса. Показать проблему, предложение, этапы работы и действие — получить консультацию."
+        },
+        {
+          title: "Адаптив и система",
+          text: "В исходном Figma есть desktop 1440 px и mobile 402 px. Макеты собраны с вертикальным Auto Layout и Hug по высоте. CTA, карточка проблемы и карточка шага вынесены в компоненты."
+        },
+        {
+          title: "Статус проекта",
+          text: "Тестовое задание Junior Web Designer, а не сайт реального банковского клиента. Кейс показывает дизайн и структуру макетов. Коммерческий запуск, конверсии и отзывы не заявлены."
+        }
+      ],
+      gallery: [
+        { image: "images/BANK-DESKTOP.png", title: "Desktop", caption: "1440 × 2924 · исходный Figma-макет", width: 1440, height: 2924, layout: "wide" },
+        { image: "images/BANK-MOBILE.png", title: "Mobile", caption: "402 × 4090 · отдельный адаптивный макет", width: 402, height: 4090 },
+        { image: "images/BANK-COMPONENTS.png", title: "Components", caption: "Primary button · Problem card · Step card", width: 460, height: 586, layout: "components" }
+      ]
+    },
+
+    jexrun: {
+      number: "09 / PRODUCT",
+      title: "JexRun",
+      category: "PRODUCT / N8N / DEVTOOL",
+      description:
+        "JexRun — n8n pre-production testing tool. Веб-продукт для анализа workflow перед production: потенциальные действия, внешние записи и опасные пути в графе. Собственный Beta-продукт с дизайном интерфейса и разработкой на TypeScript.",
+      image: "images/JEXRUN-REPORT.jpg",
+      galleryTheme: "product",
+      type: "Web product / Public Beta",
+      field: "n8n workflow analysis",
+      role: "Product design / Web development",
+      tools: "TypeScript / n8n workflow analysis / Cloudflare Workers",
+      url: "https://jexrun-beta.pyba300961246tyiou39.chatgpt.site",
+      linkLabel: "Открыть live Beta",
+      details: [
+        {
+          title: "Задача",
+          text: "Помочь n8n-фрилансеру или агентству увидеть потенциальные риски workflow до передачи автоматизации клиенту. Понятный отчёт должен объяснять действия и пути, а не оставаться списком технических статусов."
+        },
+        {
+          title: "Продуктовый путь",
+          text: "Попробовать встроенный пример или загрузить JSON → получить отчёт → изучить потенциальные действия, пути риска и checklist → подготовить отчёт к печати. Интерфейс адаптирован для компьютера и телефона."
+        },
+        {
+          title: "Границы Beta",
+          text: "Анализ основан на структуре workflow. JexRun не выполняет nodes и не подключает credentials; preview описывает потенциальные действия. Это не полноценный security audit и не гарантия отсутствия ошибок."
+        }
+      ],
+      gallery: [
+        { image: "images/JEXRUN-LANDING.jpg", title: "Landing", caption: "Скриншот опубликованной Beta · desktop", width: 1425, height: 891, layout: "wide" },
+        { image: "images/JEXRUN-LANDING-MOBILE.jpg", title: "Mobile upload", caption: "Настоящий мобильный интерфейс · 390 px viewport", width: 375, height: 865 },
+        { image: "images/JEXRUN-REPORT.jpg", title: "Pre-production report", caption: "Реальный результат анализа встроенного demo workflow", width: 1425, height: 990, layout: "wide" },
+        { image: "images/JEXRUN-REPORT-MOBILE.jpg", title: "Mobile report", caption: "Тот же demo-отчёт на мобильном экране", width: 375, height: 865 }
+      ]
+    },
+
     vyra: {
       number: "08 / PROJECT",
       title: "VYRA",
@@ -219,9 +290,15 @@
     const description = document.getElementById("projectDescription");
     const live = document.getElementById("projectLive");
     const image = document.getElementById("projectImage");
+    const imageFrame = document.querySelector(".project-page__image");
     const type = document.getElementById("projectType");
     const field = document.getElementById("projectField");
     const availability = document.getElementById("projectAvailability");
+    const role = document.getElementById("projectRole");
+    const tools = document.getElementById("projectTools");
+    const toolsRow = document.getElementById("projectToolsRow");
+    const details = document.getElementById("projectDetails");
+    const gallery = document.getElementById("projectGallery");
 
     if (number) number.textContent = project.number;
     if (category) category.textContent = project.category;
@@ -229,6 +306,51 @@
     if (description) description.textContent = project.description;
     if (type) type.textContent = project.type;
     if (field) field.textContent = project.field;
+    if (role) role.textContent = project.role || "Design & Development";
+    if (tools) tools.textContent = project.tools || "";
+    if (toolsRow) toolsRow.hidden = !project.tools;
+    if (details) {
+      details.replaceChildren();
+      details.hidden = !project.details;
+      (project.details || []).forEach((item) => {
+        const card = document.createElement("article");
+        card.className = "case-detail";
+        const heading = document.createElement("h2");
+        heading.textContent = item.title;
+        const copy = document.createElement("p");
+        copy.textContent = item.text;
+        card.append(heading, copy);
+        details.append(card);
+      });
+    }
+    if (gallery) {
+      gallery.replaceChildren();
+      gallery.hidden = !project.gallery;
+      gallery.classList.toggle("case-gallery--product", project.galleryTheme === "product");
+      (project.gallery || []).forEach((item) => {
+        const figure = document.createElement("figure");
+        figure.className = `case-visual${item.layout ? ` case-visual--${item.layout}` : ""}`;
+        const heading = document.createElement("h2");
+        heading.textContent = item.title;
+        const link = document.createElement("a");
+        link.className = "case-visual__frame";
+        link.href = item.image;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.setAttribute("aria-label", `Открыть полный макет: ${item.title}`);
+        const preview = document.createElement("img");
+        preview.src = item.image;
+        preview.alt = `${project.title} — ${item.title}`;
+        preview.loading = "lazy";
+        preview.width = item.width;
+        preview.height = item.height;
+        const caption = document.createElement("figcaption");
+        caption.textContent = `${item.caption} · открыть целиком ↗`;
+        link.append(preview);
+        figure.append(heading, link, caption);
+        gallery.append(figure);
+      });
+    }
 
     if (availability) {
       availability.hidden = !project.unavailable;
@@ -239,9 +361,12 @@
       live.href = project.url;
       live.target = "_blank";
       live.rel = "noopener noreferrer";
+      const label = live.querySelector("span");
+      if (label) label.textContent = project.linkLabel || "Открыть сайт";
     }
 
     if (image) {
+      if (imageFrame) imageFrame.classList.toggle("project-page__image--design", project.visualTheme === "design");
       image.classList.remove("image-failed");
       image.src = project.image;
       image.alt = project.title;

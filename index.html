@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7-jexrun">
 </head>
 
 <body>
@@ -149,6 +149,30 @@
           </div>
 
           <div class="projects-grid">
+            <article class="project-card project-card--wide tilt reveal" data-project="jexrun" data-tilt>
+              <a href="#project/jexrun" class="project-card__link">
+                <div class="project-card__image project-card__image--product">
+                  <img src="images/JEXRUN-REPORT.jpg" alt="JexRun — настоящий pre-production report опубликованной Beta" loading="lazy" width="1425" height="990">
+                  <div class="project-card__overlay"></div>
+                  <span class="project-card__number mono">09 / BETA PRODUCT</span>
+                  <span class="project-card__open">↗</span>
+                </div>
+                <div class="project-card__info"><div><h3>JexRun</h3><span>n8n pre-production testing tool</span></div><b class="lime-text">PRODUCT / WEB</b></div>
+              </a>
+            </article>
+
+            <article class="project-card project-card--wide tilt reveal" data-project="tarifno" data-tilt>
+              <a href="#project/tarifno" class="project-card__link">
+                <div class="project-card__image project-card__image--design">
+                  <img src="images/BANK-DESKTOP.png" alt="Тарифно — банковский landing, тестовое задание Junior Web Designer" loading="lazy" width="1440" height="2924">
+                  <div class="project-card__overlay"></div>
+                  <span class="project-card__number mono">10 / DESIGN CASE</span>
+                  <span class="project-card__open">↗</span>
+                </div>
+                <div class="project-card__info"><div><h3>Тарифно</h3><span>Банковский landing / тестовое задание</span></div><b>FIGMA / UI</b></div>
+              </a>
+            </article>
+
             <article class="project-card project-card--wide tilt reveal" data-project="vyra" data-tilt>
               <a href="#project/vyra" class="project-card__link">
                 <div class="project-card__image">
@@ -318,6 +342,30 @@
       </div>
       <div class="container"><div class="projects-grid projects-grid--all">
 
+        <article class="project-card project-card--wide tilt reveal" data-project="jexrun" data-tilt>
+          <a href="#project/jexrun" class="project-card__link">
+            <div class="project-card__image project-card__image--product">
+              <img src="images/JEXRUN-REPORT.jpg" alt="JexRun — настоящий pre-production report опубликованной Beta" loading="lazy" width="1425" height="990">
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number mono">09 / BETA PRODUCT</span>
+              <span class="project-card__open">↗</span>
+            </div>
+            <div class="project-card__info"><div><h3>JexRun</h3><span>n8n pre-production testing tool</span></div><b class="lime-text">PRODUCT / WEB</b></div>
+          </a>
+        </article>
+
+        <article class="project-card project-card--wide tilt reveal" data-project="tarifno" data-tilt>
+          <a href="#project/tarifno" class="project-card__link">
+            <div class="project-card__image project-card__image--design">
+              <img src="images/BANK-DESKTOP.png" alt="Тарифно — банковский landing, тестовое задание Junior Web Designer" loading="lazy" width="1440" height="2924">
+              <div class="project-card__overlay"></div>
+              <span class="project-card__number mono">10 / DESIGN CASE</span>
+              <span class="project-card__open">↗</span>
+            </div>
+            <div class="project-card__info"><div><h3>Тарифно</h3><span>Банковский landing / тестовое задание</span></div><b>FIGMA / UI</b></div>
+          </a>
+        </article>
+
             <article class="project-card project-card--wide tilt reveal" data-project="vyra" data-tilt>
               <a href="#project/vyra" class="project-card__link">
                 <div class="project-card__image">
@@ -389,7 +437,7 @@
       </div>
 
       <div class="container stats">
-        <div class="stat reveal"><strong>08</strong><span>Проектов<br>в портфолио</span></div>
+        <div class="stat reveal"><strong>10</strong><span>Проектов<br>в портфолио</span></div>
         <div class="stat reveal"><strong>01</strong><span>Реальный<br>клиентский проект</span></div>
         <div class="stat reveal"><strong>∞</strong><span>Внимания<br>к деталям</span></div>
       </div>
@@ -450,10 +498,13 @@
           <span class="mono">PROJECT INFO</span>
           <div class="project-info__row"><span>Тип</span><strong id="projectType"></strong></div>
           <div class="project-info__row"><span>Направление</span><strong id="projectField"></strong></div>
-          <div class="project-info__row"><span>Роль</span><strong>Design & Development</strong></div>
+          <div class="project-info__row"><span>Роль</span><strong id="projectRole">Design & Development</strong></div>
+          <div class="project-info__row" id="projectToolsRow" hidden><span>Инструменты</span><strong id="projectTools"></strong></div>
         </div>
         <a href="#works" class="next-project reveal"><span class="mono">VIEW ALL PROJECTS</span><strong>Все работы →</strong></a>
       </div>
+      <div class="container case-details" id="projectDetails" hidden></div>
+      <div class="container case-gallery" id="projectGallery" hidden></div>
     </section>
   </main>
 
@@ -468,6 +519,6 @@
     <div class="container footer__bottom"><span class="mono">© 2026 JEXONFLIER</span><span class="mono">DIGITAL DESIGN & WEBSITES</span></div>
   </footer>
 
-  <script src="script.js?v=7-vyra"></script>
+  <script src="script.js?v=8-jexrun"></script>
 </body>
 </html>
