@@ -49,7 +49,7 @@
       field: "n8n workflow analysis",
       role: "Product design / Web development",
       tools: "TypeScript / n8n workflow analysis / Cloudflare Workers",
-      url: "https://jexrun-beta.pyba300961246tyiou39.chatgpt.site",
+      url: "https://jexonflier.online/",
       linkLabel: "Открыть live Beta",
       details: [
         {
